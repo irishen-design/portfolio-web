@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Iris Shen</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" data-i18n="brand">Iris Shen</a>
+        <nav class="nav">
+          <a href="index.html" data-i18n="nav_work">Work</a>
+          <a href="about.html" aria-current="page" data-i18n="nav_about"
+            >About</a
+          >
+        </nav>
+        <div class="controls">
+          <label
+            class="visually-hidden"
+            for="lang-select"
+            data-i18n="lang_label"
+            >Language</label
+          >
+          <select id="lang-select" class="select" title="Language">
+            <option value="en">EN</option>
+            <option value="ja">日本語</option>
+            <option value="zh">简体</option>
+          </select>
+          <label
+            class="visually-hidden"
+            for="theme-select"
+            data-i18n="theme_toggle_label"
+            >Theme</label
+          >
+          <select id="theme-select" class="select" title="Theme">
+            <option value="auto" data-i18n="theme_auto">Auto</option>
+            <option value="light" data-i18n="theme_light">Light</option>
+            <option value="dark" data-i18n="theme_dark">Dark</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="container about">
+      <h1 data-i18n="about_title">About ME</h1>
+      <div class="about-grid">
+        <div class="prose">
+          <!-- English -->
+          <div data-lang="en">
+            <p>SH → NY → Tokyo</p>
+            <p>
+              I’m an architectural designer moving between cultures and scales,
+              from museums to adaptive reuse projects. I previously worked at
+              Kengo Kuma and Associates in Shanghai and am now part of Tange
+              Associates in Tokyo.
+            </p>
+            <p>
+              My work balances context and experimentation—using tools like
+              Rhino/Grasshopper, the Adobe Suite, and generative AI to bring
+              ideas from sketch to delivery. At the core of my practice, I care
+              about creating spaces of connection—places that can grow naturally
+              into communities over time.
+            </p>
+            <p>
+              Contact:
+              <a href="mailto:irishen16@outlook.com">irishen16@outlook.com</a>
+            </p>
+          </div>
+
+          <!-- Japanese (replace with your text) -->
+          <div data-lang="ja">
+            <p>SH → NY → 東京</p>
+            <p>
+              建築デザイナーとして、博物館からリノベーションまで多様なスケールと文化を横断してきました。これまで隈研吾建築都市設計事務所（上海）で勤務し、現在は丹下都市建築設計（東京）の一員です。
+            </p>
+            <p>
+              文脈と実験性のバランスを大切にし、Rhino/Grasshopper、Adobe
+              Suite、生成AIなどを用いて、スケッチから完成までアイデアを形にしています。私の実践の核心にあるのは「つながりの場」をつくること—やがてコミュニティへと育っていく空間です。
+            </p>
+            <p>
+              連絡先:
+              <a href="mailto:irishen16@outlook.com">irishen16@outlook.com</a>
+            </p>
+          </div>
+
+          <!-- Chinese (replace with your text) -->
+          <div data-lang="zh">
+            <p>上海 → 纽约 → 东京</p>
+            <p>
+              作为一名建筑设计师，我在不同的文化和尺度之间穿梭，从美术馆到改造项目皆有涉猎。我曾在隈研吾建筑都市设计事务所（上海）工作，目前就职于丹下都市建筑设计（东京）。
+            </p>
+
+            <p>
+              我的工作注重在现实性与实验性之间取得平衡，利用
+              Rhino/Grasshopperji建模、Adobe 和生成式
+              AI将想法视觉化，让idea从最初到草图一步步切实推进到落地。我最想做的是创造出“连接的空间”——并且经过时间的迁移，空间能够逐渐进化，成长为一个大家能够紧密交流的社区。
+            </p>
+            <p>
+              联系方式：<a href="mailto:irishen16@outlook.com"
+                >irishen16@outlook.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <figure class="profile">
+          <img
+            id="profile-img"
+            src="assets/img/profile.png"
+            alt="Portrait of Iris Shen"
+          />
+        </figure>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container" data-i18n="footer_copyright">
+        © <span id="year"></span> Iris Shen
+      </div>
+    </footer>
+    <script src="assets/i18n.js"></script>
+    <script src="assets/script.js"></script>
+    <script>
+      document.getElementById("year") &&
+        (document.getElementById("year").textContent =
+          new Date().getFullYear());
+    </script>
+  </body>
+</html>

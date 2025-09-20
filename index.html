@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iris Shen — Portfolio</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" data-i18n="brand">Iris Shen</a>
+        <nav class="nav">
+          <a href="index.html" aria-current="page" data-i18n="nav_work">Work</a>
+          <a href="about.html" data-i18n="nav_about">About</a>
+        </nav>
+        <div class="controls">
+          <label
+            class="visually-hidden"
+            for="lang-select"
+            data-i18n="lang_label"
+            >Language</label
+          >
+          <select id="lang-select" class="select" title="Language">
+            <option value="en">EN</option>
+            <option value="ja">日本語</option>
+            <option value="zh">简体中文</option>
+          </select>
+          <label
+            class="visually-hidden"
+            for="theme-select"
+            data-i18n="theme_toggle_label"
+            >Theme</label
+          >
+          <select id="theme-select" class="select" title="Theme">
+            <option value="auto" data-i18n="theme_auto">Auto</option>
+            <option value="light" data-i18n="theme_light">Light</option>
+            <option value="dark" data-i18n="theme_dark">Dark</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="grid">
+        <!-- Cards (sample content; replace with your images/text) -->
+        <!-- data-id links this card to a gallery in assets/script.js; data-featured marks wide 'star' projects -->
+        <article
+          class="card"
+          data-card
+          data-id="zisha"
+          data-featured="true"
+          data-title="UCCA Clay Museum"
+          data-year="2020–2024"
+          data-status="Built"
+          data-location="Yixing, China"
+          data-role="SD → DD → Construction Supervision"
+          data-experience="Kengo Kuma and Associates, Shanghai"
+          data-brief="Public museum inspired by the local 'dragon kiln' form; ceramic facade developed with local makers."
+        >
+          <img src="assets/img/zisha/site-1.jpg" alt="Zisha Museum cover" />
+          <h3>UCCA Clay Museum <span class="meta">2020–2024</span></h3>
+          <p>Status: Built</p>
+          <p>Yixing, China</p>
+        </article>
+
+        <article
+          class="card"
+          data-card
+          data-featured="true"
+          data-id="vc"
+          data-title="Closer, not further."
+          data-year="2025"
+          data-status="Competition"
+          data-location="Meguro, Tokyo, Japan"
+          data-role="Concept Design"
+          data-experience="Personal"
+          data-brief="Architectural thesis exploring “transient privacy” through curvilinear spaces and partial enclosures."
+        >
+          <img src="assets/img/VC/axon.png" alt="VC cover" />
+          <h3>
+            Closer, not further.
+            <span class="meta">2025</span>
+          </h3>
+          <p>Status: Competition</p>
+          <p>Meguro, Tokyo, Japan</p>
+        </article>
+
+        <article
+          class="card"
+          data-card
+          data-id="thesis"
+          data-title="If Eaves Dropped: Rethinking Privacy NOW"
+          data-year="2019-2020"
+          data-location="Oomori, Tokyo, Japan"
+          data-role="Thesis Project (Honorable Mention)"
+          data-experience="Pratt Institute"
+          data-brief="Our project provokes a new sense of privacy: transient privacy, in other words, privacy without ownership."
+        >
+          <img
+            src="assets/img/if eaves dropped/section.gif"
+            alt="Animated Sections"
+          />
+          <h3>
+            If Eaves Dropped:
+            <span class="title-break"
+              >Rethinking Privacy NOW <span class="meta">2019-2020</span></span
+            >
+          </h3>
+          <p>Oomori, Tokyo, Japan</p>
+        </article>
+
+        <article
+          class="card"
+          data-card
+          data-id="dirtyrealism"
+          data-title="Confusion and the New Civic"
+          data-year="2019"
+          data-location="Shinjuku, Tokyo, Japan"
+          data-role="Concept Design"
+          data-brief="Mall concept that introduces a solid volume to create curiosity and a distinct brand atmosphere."
+        >
+          <img src="assets/img/dirty realism/cover.jpg" alt="DR cover" />
+          <h3>Confusion and the New Civic <span class="meta">2019</span></h3>
+          <p>Shinjuku, Tokyo, Japan</p>
+        </article>
+
+        <article
+          class="card"
+          data-card
+          data-id="zhangyuan"
+          data-title="Zhangyuan Museum of Art"
+          data-year="2021–Present"
+          data-location="Shanghai, China"
+          data-role="Concept Design → Schematic Design"
+          data-experience="Kengo Kuma and Associates, Shanghai"
+          data-brief="Terraced massing frames layered views through a historic longtang; B1 entry links hotel and retail via sunken plaza."
+        >
+          <img
+            src="assets/img/zhangyuan/cover.jpg"
+            alt="Zhangyuan Museum cover"
+          />
+          <h3>
+            Zhangyuan Museum of Art
+            <span class="title-break"
+              ><span class="meta">2021–Present</span></span
+            >
+          </h3>
+          <p>Shanghai, China</p>
+        </article>
+      </section>
+
+      <!-- New 4-up square cards row -->
+      <section class="grid grid-4 grid-squares">
+        <article
+          class="card"
+          data-card
+          data-id="birkenstock"
+          data-title="Birkenstock Harajuku Concept Store"
+          data-year="2022-2023"
+          data-location="Harajuku, Tokyo, Japan"
+          data-role="Visualization"
+          data-brief="Photo-realistic renderings to push the design process further."
+        >
+          <img src="assets/img/birkenstock/cover2.png" alt="Entrance Render" />
+          <h3>
+            Birkenstock Harajuku Concept Store
+            <span class="meta">2022-2023</span>
+          </h3>
+          <p>Harajuku, Tokyo, Japan</p>
+        </article>
+
+        <article
+          class="card"
+          data-card
+          data-id="tama"
+          data-title="Porosity: Tama Art University Library Analysis"
+          data-year="2019"
+          data-location="Hachioji, Japan"
+          data-role="Analysis"
+          data-brief="Explores the idea of porosity through Toyo Ito's Tama Art University Library. Graphic style influenced by Akira and Ghost in the Shell."
+        >
+          <img src="assets/img/tama/Tama_worm_s.jpg" alt="Worm's Eye View" />
+          <h3>
+            Porosity: Tama Art University Library Analysis<span class="meta"
+              >2019</span
+            >
+          </h3>
+          <p>Hachioji, Japan</p>
+        </article>
+
+        <article
+          class="card"
+          data-card
+          data-id="wuxi"
+          data-title="Wuxi Concert Hall and Commercial Complex"
+          data-year="2022"
+          data-location="Wuxi, Jiangsu, China"
+          data-role="Concept Design"
+          data-brief="The site itself acts as a large concert hall where people can enjoy music events and other cultural activities regardles of being inside or outside."
+        >
+          <img src="assets/img/wuxi/cover.jpg" alt="Main Concept" />
+          <h3>
+            Wuxi Concert Hall and Commercial Complex<span class="meta"
+              >2022</span
+            >
+          </h3>
+          <p>City, Country</p>
+        </article>
+
+        <article
+          class="card"
+          data-card
+          data-id="boathouse"
+          data-title="Fluid yet Defined: Columbia University Baker Athletic Complex"
+          data-year="2018"
+          data-location="Inwood, New York, USA"
+          data-role="Concept"
+          data-brief="Taking the idea of fluidity, the key to rowing, we began to study arches as the primary structural scheme for the project."
+        >
+          <img src="assets/img/boathouse/cover.jpg" alt="Model Shot" />
+          <h3>
+            Fluid yet Defined: Columbia University Baker Athletic Complex
+            <span class="meta">2018</span>
+          </h3>
+          <p>Inwood, New York, USA</p>
+        </article>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+      <article
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <header>
+          <h2 id="modal-title">Project title</h2>
+          <button
+            class="close"
+            id="modal-close"
+            aria-label="Close"
+            data-i18n="modal_close"
+          >
+            Close
+          </button>
+        </header>
+        <div class="body">
+          <!-- Large image viewer with prev/next buttons -->
+          <div class="carousel" id="modal-carousel" aria-live="polite">
+            <button
+              class="carousel-nav prev"
+              id="carousel-prev"
+              aria-label="Previous image"
+            >
+              &#10094;
+            </button>
+            <img id="carousel-image" alt="" />
+            <button
+              class="carousel-nav next"
+              id="carousel-next"
+              aria-label="Next image"
+            >
+              &#10095;
+            </button>
+          </div>
+          <div class="meta-grid">
+            <div>
+              <span data-i18n="modal_year">Year</span>:
+              <span id="modal-year">—</span>
+            </div>
+            <div>
+              <span data-i18n="modal_location">Location</span>:
+              <span id="modal-location">—</span>
+            </div>
+            <div>
+              <span data-i18n="modal_role">Role</span>:
+              <span id="modal-role">—</span>
+            </div>
+            <div>
+              <span data-i18n="modal_experience">Experience</span>:
+              <span id="modal-experience">—</span>
+            </div>
+          </div>
+          <p id="modal-brief">—</p>
+          <!-- Gallery gets populated dynamically when a card is clicked -->
+          <div
+            id="modal-gallery"
+            class="gallery"
+            aria-label="Image gallery"
+          ></div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Fullscreen Lightbox -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Image viewer"
+    >
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+        &#10005;
+      </button>
+      <button
+        class="lightbox-nav prev"
+        id="lightbox-prev"
+        aria-label="Previous image"
+      >
+        &#10094;
+      </button>
+      <img id="lightbox-image" alt="" />
+      <button
+        class="lightbox-nav next"
+        id="lightbox-next"
+        aria-label="Next image"
+      >
+        &#10095;
+      </button>
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <footer class="footer">
+      <div class="container" data-i18n="footer_copyright">
+        © <span id="year"></span> Iris Shen
+      </div>
+    </footer>
+
+    <!-- Custom cursor element -->
+    <div id="cursor" class="cursor" aria-hidden="true"></div>
+
+    <script src="assets/i18n.js"></script>
+    <script src="assets/script.js"></script>
+    <script>
+      document.getElementById("year") &&
+        (document.getElementById("year").textContent =
+          new Date().getFullYear());
+    </script>
+  </body>
+</html>
