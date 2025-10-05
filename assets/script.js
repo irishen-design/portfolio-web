@@ -25,6 +25,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxNext = document.getElementById("lightbox-next");
   const lightboxClose = document.getElementById("lightbox-close");
   const lightboxCaption = document.getElementById("lightbox-caption");
+  const cursorEl = document.getElementById("cursor");
+
+  function initCursor() {
+    if (!cursorEl) return;
+    const rootStyle = document.documentElement.style;
+    let idleTimer = null;
+    const IDLE_AFTER = 1200; // ms
+    window.addEventListener(
+      "mousemove",
+      (e) => {
+        // Center the 20px circle on the pointer
+        const x = e.clientX - 12;
+        const y = e.clientY - 12;
+        rootStyle.setProperty("--cx", x + "px");
+        rootStyle.setProperty("--cy", y + "px");
+        // Idle handling
+        cursorEl.classList.remove("is-idle");
+        if (idleTimer) clearTimeout(idleTimer);
+        idleTimer = setTimeout(
+          () => cursorEl.classList.add("is-idle"),
+          IDLE_AFTER
+        );
+      },
+      { passive: true }
+    );
+  }
+
+  // If the page doesn't include the project modal (e.g. static pages), skip modal wiring.
+  if (!modalBackdrop) {
+    initCursor();
+    return;
+  }
 
   // Project galleries (keyed by each card's data-id)
   const GALLERIES = {
@@ -349,28 +381,5 @@ document.addEventListener("DOMContentLoaded", () => {
   closeBtn.addEventListener("click", closeModal);
 
   // Lightweight custom cursor tracker (CSS-driven visuals)
-  const cursorEl = document.getElementById("cursor");
-  if (cursorEl) {
-    const rootStyle = document.documentElement.style;
-    let idleTimer = null;
-    const IDLE_AFTER = 1200; // ms
-    window.addEventListener(
-      "mousemove",
-      (e) => {
-        // Center the 20px circle on the pointer
-        const x = e.clientX - 12;
-        const y = e.clientY - 12;
-        rootStyle.setProperty("--cx", x + "px");
-        rootStyle.setProperty("--cy", y + "px");
-        // Idle handling
-        cursorEl.classList.remove("is-idle");
-        if (idleTimer) clearTimeout(idleTimer);
-        idleTimer = setTimeout(
-          () => cursorEl.classList.add("is-idle"),
-          IDLE_AFTER
-        );
-      },
-      { passive: true }
-    );
-  }
+  initCursor();
 });

@@ -5,6 +5,7 @@
     en: {
       nav_work: "Works",
       nav_about: "About Me",
+      nav_ai_coaching: "AI Coaching",
       brand: "Iris Shen",
       footer_copyright: "© {year} Iris Shen — All rights reserved.",
       theme_auto: "Auto",
@@ -35,8 +36,9 @@
     ja: {
       nav_work: "Works",
       nav_about: "About Me",
-      brand: "沈 屹雯",
-      footer_copyright: "© {year} 沈 屹雯 — All rights reserved.",
+      nav_ai_coaching: "AIコーチング",
+      brand: "シェン",
+      footer_copyright: "© {year} シェン イーウェン — All rights reserved.",
       theme_auto: "自動",
       theme_light: "ライト",
       theme_dark: "ダーク",
@@ -66,6 +68,7 @@
     zh: {
       nav_work: "Works",
       nav_about: "About Me",
+      nav_ai_coaching: "AI 教练",
       brand: "沈屹雯",
       footer_copyright: "© {year} 沈屹雯 — All rights reserved.",
       theme_auto: "自动",
