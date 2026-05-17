@@ -1,5 +1,5 @@
 (function(){
-  const STORAGE_KEYS = { lang: "site:lang" };
+  const STORAGE_KEYS = { lang: "site:lang:v2" };
   const DEFAULT_LANG = "en"; // 'en' | 'ja' | 'zh'
   function safeGet(key){
     try {
