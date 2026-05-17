@@ -1,21 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Iris Shen — Portfolio</title>
+    <meta
+      name="description"
+      content="Selected architectural work by Iris Shen across cultural, educational, and spatial research projects in New York, Shanghai, and Tokyo."
+    />
+    <meta name="theme-color" content="#f3eee7" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Iris Shen — Portfolio" />
+    <meta
+      property="og:description"
+      content="Selected architectural work by Iris Shen across cultural, educational, and spatial research projects in New York, Shanghai, and Tokyo."
+    />
+    <meta property="og:image" content="assets/img/zisha/site-1.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
-  <body>
+  <body class="work-page home-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="header">
-      <div class="container header-inner">
+      <div class="container header-inner header-inner-minimal">
         <a class="brand" href="index.html" data-i18n="brand">Iris Shen</a>
-        <nav class="nav">
-          <a href="index.html" aria-current="page" data-i18n="nav_work">Work</a>
-          <a href="about.html" data-i18n="nav_about">About</a>
-          <a href="ai-coaching.html" data-i18n="nav_ai_coaching">AI Coaching</a>
-        </nav>
         <div class="controls">
           <label
             class="visually-hidden"
@@ -28,68 +37,220 @@
             <option value="ja">日本語</option>
             <option value="zh">简体中文</option>
           </select>
-          <label
-            class="visually-hidden"
-            for="theme-select"
-            data-i18n="theme_toggle_label"
-            >Theme</label
-          >
-          <select id="theme-select" class="select" title="Theme">
-            <option value="auto" data-i18n="theme_auto">Auto</option>
-            <option value="light" data-i18n="theme_light">Light</option>
-            <option value="dark" data-i18n="theme_dark">Dark</option>
-          </select>
         </div>
       </div>
     </header>
 
-    <main class="container">
-      <section class="grid">
-        <!-- Cards (sample content; replace with your images/text) -->
-        <!-- data-id links this card to a gallery in assets/script.js; data-featured marks wide 'star' projects -->
+    <button
+      class="menu-trigger"
+      id="menu-trigger"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-overlay"
+      aria-label="Open index menu"
+    >
+      <svg class="menu-trigger-mark" viewBox="0 0 256 256" aria-hidden="true">
+        <g class="menu-trigger-shadow">
+          <path
+            d="M70.41,224.08c-7.86-4.4-14.61-9.15-20.24-14.25-5.64-5.1-9.95-10.32-12.92-15.66l14.3-21.25c2.96,5.79,7.01,11.45,12.18,16.97,5.17,5.53,11.33,10.3,18.49,14.31,5.07,2.84,10.15,4.71,15.27,5.62,5.11.91,10.09.83,14.93-.25,4.85-1.07,9.34-3.26,13.49-6.56,4.13-3.3,7.78-7.75,10.91-13.34,2.64-4.72,4.26-9.26,4.87-13.63.6-4.36.35-9.44-.77-15.22-1.12-5.79-3.23-12.88-6.33-21.27-2.8-7.3-4.92-14.28-6.36-20.93-1.44-6.66-1.69-13.28-.75-19.87.93-6.59,3.4-13.46,7.41-20.63,4.69-8.39,10.23-15.1,16.6-20.14,6.38-5.04,13.37-8.52,20.99-10.45,7.62-1.93,15.52-2.21,23.71-.84,8.18,1.36,16.38,4.34,24.6,8.94,7.16,4.01,13.64,8.84,19.42,14.49,5.79,5.65,10.21,11.28,13.27,16.89l-20.56,13.97c-2.72-4.97-6.15-9.81-10.28-14.53-4.13-4.72-8.82-8.55-14.06-11.48-4.55-2.54-9.13-4.19-13.76-4.95-4.62-.75-9.19-.6-13.67.44-4.49,1.05-8.61,3.1-12.39,6.15-3.78,3.05-7.08,7.11-9.91,12.18s-4.44,9.97-4.79,14.7c-.35,4.74.19,9.91,1.63,15.54,1.44,5.62,3.51,12.18,6.21,19.65,2.87,7.57,4.91,14.68,6.13,21.33,1.21,6.64,1.31,13.24.29,19.78-1.02,6.54-3.58,13.48-7.69,20.82-4.79,8.56-10.43,15.56-16.91,20.99-6.48,5.44-13.65,9.23-21.51,11.37-7.86,2.15-16.14,2.5-24.86,1.06-8.72-1.44-17.7-4.75-26.97-9.93Z"
+          />
+          <circle cx="21.47" cy="162.73" r="14.78" />
+        </g>
+        <g class="menu-trigger-main">
+          <path
+            d="M62.98,211.26c-7.86-4.4-14.61-9.15-20.24-14.25-5.64-5.1-9.95-10.32-12.92-15.66l14.3-21.25c2.96,5.79,7.01,11.45,12.18,16.97,5.17,5.53,11.33,10.3,18.49,14.31,5.07,2.84,10.15,4.71,15.27,5.62,5.11.91,10.09.83,14.93-.25,4.85-1.07,9.34-3.26,13.49-6.56,4.13-3.3,7.78-7.75,10.91-13.34,2.64-4.72,4.26-9.26,4.87-13.63.6-4.36.35-9.44-.77-15.22-1.12-5.79-3.23-12.88-6.33-21.27-2.8-7.3-4.92-14.28-6.36-20.93-1.44-6.66-1.69-13.28-.75-19.87.93-6.59,3.4-13.46,7.41-20.63,4.69-8.39,10.23-15.1,16.6-20.14,6.38-5.04,13.37-8.52,20.99-10.45,7.62-1.93,15.52-2.21,23.71-.84,8.18,1.36,16.38,4.34,24.6,8.94,7.16,4.01,13.64,8.84,19.42,14.49,5.79,5.65,10.21,11.28,13.27,16.89l-20.56,13.97c-2.72-4.97-6.15-9.81-10.28-14.53-4.13-4.72-8.82-8.55-14.06-11.48-4.55-2.54-9.13-4.19-13.76-4.95-4.62-.75-9.19-.6-13.67.44-4.49,1.05-8.61,3.1-12.39,6.15-3.78,3.05-7.08,7.11-9.91,12.18s-4.44,9.97-4.79,14.7c-.35,4.74.19,9.91,1.63,15.54,1.44,5.62,3.51,12.18,6.21,19.65,2.87,7.57,4.91,14.68,6.13,21.33,1.21,6.64,1.31,13.24.29,19.78-1.02,6.54-3.58,13.48-7.69,20.82-4.79,8.56-10.43,15.56-16.91,20.99-6.48,5.44-13.65,9.23-21.51,11.37-7.86,2.15-16.14,2.5-24.86,1.06-8.72-1.44-17.7-4.75-26.97-9.93Z"
+          />
+          <circle class="menu-trigger-dot" cx="16.64" cy="153.15" r="14.78" />
+        </g>
+      </svg>
+    </button>
+
+    <div class="site-overlay" id="site-overlay" aria-hidden="true">
+      <div class="container site-overlay-inner">
+        <section class="site-overlay-frame" aria-labelledby="overlay-title">
+          <div class="landing-nav-column">
+            <p class="section-kicker" data-i18n="landing_kicker">Index</p>
+            <h1
+              class="landing-heading"
+              id="overlay-title"
+              data-i18n="landing_heading"
+            >
+              A calm architectural index.
+            </h1>
+            <div class="landing-links">
+              <a
+                class="landing-link"
+                href="index.html"
+                aria-current="page"
+                data-preview-target="work"
+                data-preview-kicker="Portfolio"
+                data-preview-title="Selected Works"
+                data-preview-text="Architecture, interiors, visualization, and design research."
+                data-preview-image="assets/img/zisha/site-1.jpg"
+              >
+                <span class="landing-link-label" data-i18n="landing_work"
+                  >Selected Works</span
+                >
+                <span class="landing-link-meta">01</span>
+              </a>
+              <a
+                class="landing-link"
+                href="about.html"
+                data-preview-target="about"
+                data-preview-kicker="Background"
+                data-preview-title="About ME"
+                data-preview-text="Thoughts, experiences, and interests shaping my approach to space and design."
+                data-preview-image="assets/img/if eaves dropped/lo.jpg"
+                data-preview-image-secondary="assets/img/if eaves dropped/lon.jpg"
+              >
+                <span class="landing-link-label" data-i18n="landing_about"
+                  >About ME</span
+                >
+                <span class="landing-link-meta">02</span>
+              </a>
+              <a
+                class="landing-link"
+                href="mailto:irishen16@outlook.com"
+                data-preview-target="contact"
+                data-preview-kicker="Direct"
+                data-preview-title="Contact"
+                data-preview-text="For projects, collaborations, or simply exchanging ideas."
+                data-preview-image="assets/img/if eaves dropped/IMG_1701.jpg"
+                data-contact-email="irishen16@outlook.com"
+                data-contact-linkedin="www.linkedin.com/in/irishen-design"
+                data-contact-github="github.com/irishen-design"
+              >
+                <span class="landing-link-label" data-i18n="contact"
+                  >Get in touch</span
+                >
+                <span class="landing-link-meta">03</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="landing-preview" aria-live="polite">
+            <p class="landing-preview-kicker" id="landing-preview-kicker">
+              Portfolio
+            </p>
+            <h2 class="landing-preview-title" id="landing-preview-title">
+              Selected Works
+            </h2>
+            <p class="landing-preview-text" id="landing-preview-text">
+              A project-led overview with one anchor project and a quieter grid
+              of selected work.
+            </p>
+            <div class="landing-preview-media">
+              <img
+                id="landing-preview-image"
+                src="assets/img/zisha/site-1.jpg"
+                alt="Selected work preview"
+              />
+              <img
+                class="landing-preview-image-secondary"
+                id="landing-preview-image-secondary"
+                src=""
+                alt=""
+                hidden
+              />
+            </div>
+            <div
+              class="landing-preview-contact"
+              id="landing-preview-contact"
+              hidden
+            >
+              <a
+                class="landing-contact-row"
+                id="landing-contact-email"
+                href="mailto:irishen16@outlook.com"
+              >
+                <span class="landing-contact-label">Email</span>
+                <span class="landing-contact-value">irishen16@outlook.com</span>
+              </a>
+              <a
+                class="landing-contact-row"
+                id="landing-contact-linkedin"
+                href="https://www.linkedin.com/in/irishen-design"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="landing-contact-label landing-contact-label--logo">
+                  <img src="assets/img/linkedin logo.png" alt="LinkedIn" />
+                </span>
+                <span class="landing-contact-value"
+                  >www.linkedin.com/in/irishen-design</span
+                >
+              </a>
+              <a
+                class="landing-contact-row"
+                id="landing-contact-github"
+                href="https://github.com/irishen-design"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="landing-contact-label landing-contact-label--logo">
+                  <img src="assets/img/github logo.svg" alt="GitHub" />
+                </span>
+                <span class="landing-contact-value">github.com/irishen-design</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <main class="container work-main" id="main-content">
+      <section class="work-hero" aria-labelledby="work-hero-title">
         <article
-          class="card"
+          class="work-hero-card"
           data-card
           data-id="zisha"
-          data-featured="true"
           data-title="UCCA Clay Museum"
           data-year="2020–2024"
           data-status="Built"
           data-location="Yixing, China"
           data-role="SD → DD → Construction Supervision"
           data-experience="Kengo Kuma and Associates, Shanghai"
-          data-brief="Public museum inspired by the local 'dragon kiln' form; ceramic facade developed with local makers."
+          data-brief="Public museum inspired by the local dragon kiln form; ceramic facade developed with local makers."
+          id="project-zisha"
         >
-          <img src="assets/img/zisha/site-1.jpg" alt="Zisha Museum cover" />
-          <h3>UCCA Clay Museum <span class="meta">2020–2024</span></h3>
-          <p>Status: Built</p>
-          <p>Yixing, China</p>
+          <div class="work-hero-media">
+            <img src="assets/img/zisha/site-1.jpg" alt="UCCA Clay Museum" />
+          </div>
+          <div class="work-hero-copy">
+            <p class="section-kicker">Selected Work</p>
+            <h1 id="work-hero-title">UCCA Clay Museum</h1>
+            <p class="work-hero-meta">2020–2024 · Yixing, China</p>
+            <p class="work-hero-brief">
+              A public museum shaped through the spatial memory of the local
+              dragon kiln, pairing ceramic material research with a quieter
+              civic presence.
+            </p>
+            <p class="work-hero-cta">Open project</p>
+          </div>
         </article>
+      </section>
 
+      <section class="work-list" aria-label="Selected projects">
         <article
-          class="card"
+          class="card work-item work-item--medium work-item--left work-item--birkenstock"
           data-card
-          data-featured="true"
-          data-id="vc"
-          data-title="Closer, not further."
-          data-year="2025"
-          data-status="Competition"
-          data-location="Meguro, Tokyo, Japan"
-          data-role="Concept Design"
-          data-experience="Personal"
-          data-brief="Architectural thesis exploring “transient privacy” through curvilinear spaces and partial enclosures."
+          data-id="birkenstock"
+          data-title="Birkenstock Harajuku Concept Store"
+          data-year="2022-2023"
+          data-location="Harajuku, Tokyo, Japan"
+          data-role="Visualization"
+          data-brief="Photo-realistic renderings to push the design process further."
         >
-          <img src="assets/img/VC/axon.png" alt="VC cover" />
+          <img src="assets/img/birkenstock/cover2.png" alt="Entrance Render" />
           <h3>
-            Closer, not further.
-            <span class="meta">2025</span>
+            Birkenstock Harajuku Concept Store
+            <span class="meta">2022-2023</span>
           </h3>
-          <p>Status: Competition</p>
-          <p>Meguro, Tokyo, Japan</p>
+          <p>Harajuku, Tokyo, Japan</p>
         </article>
 
         <article
-          class="card"
+          class="card work-item work-item--medium work-item--right"
           data-card
           data-id="thesis"
           data-title="If Eaves Dropped: Rethinking Privacy NOW"
@@ -113,22 +274,7 @@
         </article>
 
         <article
-          class="card"
-          data-card
-          data-id="dirtyrealism"
-          data-title="Confusion and the New Civic"
-          data-year="2019"
-          data-location="Shinjuku, Tokyo, Japan"
-          data-role="Concept Design"
-          data-brief="Mall concept that introduces a solid volume to create curiosity and a distinct brand atmosphere."
-        >
-          <img src="assets/img/dirty realism/cover.jpg" alt="DR cover" />
-          <h3>Confusion and the New Civic <span class="meta">2019</span></h3>
-          <p>Shinjuku, Tokyo, Japan</p>
-        </article>
-
-        <article
-          class="card"
+          class="work-feature work-feature--reverse work-feature--break"
           data-card
           data-id="zhangyuan"
           data-title="Zhangyuan Museum of Art"
@@ -138,68 +284,87 @@
           data-experience="Kengo Kuma and Associates, Shanghai"
           data-brief="Terraced massing frames layered views through a historic longtang; B1 entry links hotel and retail via sunken plaza."
         >
-          <img
-            src="assets/img/zhangyuan/cover.jpg"
-            alt="Zhangyuan Museum cover"
-          />
-          <h3>
-            Zhangyuan Museum of Art
-            <span class="title-break"
-              ><span class="meta">2021–Present</span></span
-            >
-          </h3>
-          <p>Shanghai, China</p>
+          <div class="work-feature-copy">
+            <p class="section-kicker">Selected Work</p>
+            <h2>Zhangyuan Museum of Art</h2>
+            <p class="work-feature-meta">2021–Present · Shanghai, China</p>
+            <p class="work-feature-brief">
+              Terraced massing frames layered views through a historic longtang,
+              with a below-grade arrival sequence linking hotel, retail, and
+              museum spaces.
+            </p>
+            <p class="work-feature-cta">Open project</p>
+          </div>
+          <div class="work-feature-media">
+            <img
+              src="assets/img/zhangyuan/cover.jpg"
+              alt="Zhangyuan Museum cover"
+            />
+          </div>
         </article>
-      </section>
 
-      <!-- New 4-up square cards row -->
-      <section class="grid grid-4 grid-squares">
+        <div class="work-pair" aria-label="Related projects">
+          <article
+            class="card work-item work-pair__confusion"
+            data-card
+            data-id="dirtyrealism"
+            data-title="Confusion and the New Civic"
+            data-year="2019"
+            data-location="Shinjuku, Tokyo, Japan"
+            data-role="Concept Design"
+            data-brief="Mall concept that introduces a solid volume to create curiosity and a distinct brand atmosphere."
+          >
+            <img src="assets/img/dirty realism/cover.jpg" alt="DR cover" />
+            <h3>Confusion and the New Civic <span class="meta">2019</span></h3>
+            <p>Shinjuku, Tokyo, Japan</p>
+          </article>
+
+          <article
+            class="card work-item work-item--tama work-pair__tama"
+            data-card
+            data-id="tama"
+            data-title="Porosity: Tama Art University Library Analysis"
+            data-year="2019"
+            data-location="Hachioji, Japan"
+            data-role="Analysis"
+            data-brief="Explores the idea of porosity through Toyo Ito's Tama Art University Library. Graphic style influenced by Akira and Ghost in the Shell."
+          >
+            <img src="assets/img/tama/Tama_worm_s.jpg" alt="Worm's Eye View" />
+            <h3>
+              Porosity: Tama Art University Library Analysis<span class="meta"
+                >2019</span
+              >
+            </h3>
+            <p>Hachioji, Japan</p>
+          </article>
+        </div>
+
         <article
-          class="card"
+          class="card work-item work-item--medium work-item--right work-item--closer"
           data-card
-          data-id="birkenstock"
-          data-title="Birkenstock Harajuku Concept Store"
-          data-year="2022-2023"
-          data-location="Harajuku, Tokyo, Japan"
-          data-role="Visualization"
-          data-brief="Photo-realistic renderings to push the design process further."
+          data-id="vc"
+          data-title="Closer, not further."
+          data-year="2025"
+          data-status="Competition"
+          data-location="Meguro, Tokyo, Japan"
+          data-role="Concept Design"
+          data-experience="Personal"
+          data-brief="Architectural thesis exploring transient privacy through curvilinear spaces, partial enclosures, and new forms of closeness."
         >
-          <img src="assets/img/birkenstock/cover2.png" alt="Entrance Render" />
-          <h3>
-            Birkenstock Harajuku Concept Store
-            <span class="meta">2022-2023</span>
-          </h3>
-          <p>Harajuku, Tokyo, Japan</p>
+          <img src="assets/img/VC/Board.png" alt="Closer, not further." />
+          <h3>Closer, not further. <span class="meta">2025</span></h3>
+          <p>Meguro, Tokyo, Japan</p>
         </article>
 
         <article
-          class="card"
-          data-card
-          data-id="tama"
-          data-title="Porosity: Tama Art University Library Analysis"
-          data-year="2019"
-          data-location="Hachioji, Japan"
-          data-role="Analysis"
-          data-brief="Explores the idea of porosity through Toyo Ito's Tama Art University Library. Graphic style influenced by Akira and Ghost in the Shell."
-        >
-          <img src="assets/img/tama/Tama_worm_s.jpg" alt="Worm's Eye View" />
-          <h3>
-            Porosity: Tama Art University Library Analysis<span class="meta"
-              >2019</span
-            >
-          </h3>
-          <p>Hachioji, Japan</p>
-        </article>
-
-        <article
-          class="card"
+          class="card work-item work-item--wide work-item--left"
           data-card
           data-id="wuxi"
           data-title="Wuxi Concert Hall and Commercial Complex"
           data-year="2022"
           data-location="Wuxi, Jiangsu, China"
           data-role="Concept Design"
-          data-brief="The site itself acts as a large concert hall where people can enjoy music events and other cultural activities regardles of being inside or outside."
+          data-brief="The site itself acts as a large concert hall where people can enjoy music events and other cultural activities regardless of being inside or outside."
         >
           <img src="assets/img/wuxi/cover.jpg" alt="Main Concept" />
           <h3>
@@ -207,11 +372,11 @@
               >2022</span
             >
           </h3>
-          <p>City, Country</p>
+          <p>Wuxi, Jiangsu, China</p>
         </article>
 
         <article
-          class="card"
+          class="card work-item work-item--medium work-item--right"
           data-card
           data-id="boathouse"
           data-title="Fluid yet Defined: Columbia University Baker Athletic Complex"
@@ -230,7 +395,6 @@
       </section>
     </main>
 
-    <!-- Modal -->
     <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
       <article
         class="modal"
@@ -250,7 +414,6 @@
           </button>
         </header>
         <div class="body">
-          <!-- Large image viewer with prev/next buttons -->
           <div class="carousel" id="modal-carousel" aria-live="polite">
             <button
               class="carousel-nav prev"
@@ -287,7 +450,6 @@
             </div>
           </div>
           <p id="modal-brief">—</p>
-          <!-- Gallery gets populated dynamically when a card is clicked -->
           <div
             id="modal-gallery"
             class="gallery"
@@ -297,7 +459,6 @@
       </article>
     </div>
 
-    <!-- Fullscreen Lightbox -->
     <div
       class="lightbox"
       id="lightbox"
@@ -332,10 +493,10 @@
       </div>
     </footer>
 
-    <!-- Custom cursor element -->
     <div id="cursor" class="cursor" aria-hidden="true"></div>
 
     <script src="assets/i18n.js"></script>
+    <script src="assets/work-content.js"></script>
     <script src="assets/script.js"></script>
     <script>
       document.getElementById("year") &&

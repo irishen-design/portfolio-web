@@ -1,23 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>About — Iris Shen</title>
+    <meta
+      name="description"
+      content="Background, education, and professional timeline for architectural designer Iris Shen."
+    />
+    <meta name="theme-color" content="#f3eee7" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About — Iris Shen" />
+    <meta
+      property="og:description"
+      content="Background, education, and professional timeline for architectural designer Iris Shen."
+    />
+    <meta property="og:image" content="assets/img/profile.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
-  <body>
+  <body class="about-page">
+    <a class="skip-link" href="#timeline">Skip to content</a>
     <header class="header">
-      <div class="container header-inner">
+      <div class="container header-inner header-inner-minimal">
         <a class="brand" href="index.html" data-i18n="brand">Iris Shen</a>
-        <nav class="nav">
-          <a href="index.html" data-i18n="nav_work">Work</a>
-          <a href="about.html" aria-current="page" data-i18n="nav_about"
-            >About</a
-          >
-          <a href="ai-coaching.html" data-i18n="nav_ai_coaching">AI Coaching</a>
-        </nav>
         <div class="controls">
           <label
             class="visually-hidden"
@@ -30,89 +37,282 @@
             <option value="ja">日本語</option>
             <option value="zh">简体</option>
           </select>
-          <label
-            class="visually-hidden"
-            for="theme-select"
-            data-i18n="theme_toggle_label"
-            >Theme</label
-          >
-          <select id="theme-select" class="select" title="Theme">
-            <option value="auto" data-i18n="theme_auto">Auto</option>
-            <option value="light" data-i18n="theme_light">Light</option>
-            <option value="dark" data-i18n="theme_dark">Dark</option>
-          </select>
         </div>
       </div>
     </header>
 
-    <main class="container about">
-      <h1 data-i18n="about_title">About ME</h1>
-      <div class="about-grid">
-        <div class="prose">
-          <!-- English -->
-          <div data-lang="en">
-            <p>SH → NY → Tokyo</p>
-            <p>
-              I’m an architectural designer moving between cultures and scales,
-              from museums to adaptive reuse projects. I previously worked at
-              Kengo Kuma and Associates in Shanghai and am now part of Tange
-              Associates in Tokyo.
-            </p>
-            <p>
-              My work balances context and experimentation—using tools like
-              Rhino/Grasshopper, the Adobe Suite, and generative AI to bring
-              ideas from sketch to delivery. At the core of my practice, I care
-              about creating spaces of connection—places that can grow naturally
-              into communities over time.
-            </p>
-            <p>
-              Contact:
-              <a href="mailto:irishen16@outlook.com">irishen16@outlook.com</a>
-            </p>
-          </div>
-
-          <!-- Japanese (replace with your text) -->
-          <div data-lang="ja">
-            <p>SH → NY → 東京</p>
-            <p>
-              建築デザイナーとして、博物館からリノベーションまで多様なスケールと文化を横断してきました。これまで隈研吾建築都市設計事務所（上海）で勤務し、現在は丹下都市建築設計（東京）の一員です。
-            </p>
-            <p>
-              文脈と実験性のバランスを大切にし、Rhino/Grasshopper、Adobe
-              Suite、生成AIなどを用いて、スケッチから完成までアイデアを形にしています。私の実践の核心にあるのは「つながりの場」をつくること—やがてコミュニティへと育っていく空間です。
-            </p>
-            <p>
-              連絡先:
-              <a href="mailto:irishen16@outlook.com">irishen16@outlook.com</a>
-            </p>
-          </div>
-
-          <!-- Chinese (replace with your text) -->
-          <div data-lang="zh">
-            <p>上海 → 纽约 → 东京</p>
-            <p>
-              作为一名建筑设计师，我在不同的文化和尺度之间穿梭，从美术馆到改造项目皆有涉猎。我曾在隈研吾建筑都市设计事务所（上海）工作，目前就职于丹下都市建筑设计（东京）。
-            </p>
-
-            <p>
-              我的工作注重在现实性与实验性之间取得平衡，利用
-              Rhino/Grasshopperji建模、Adobe 和生成式
-              AI将想法视觉化，让idea从最初到草图一步步切实推进到落地。我最想做的是创造出“连接的空间”——并且经过时间的迁移，空间能够逐渐进化，成长为一个大家能够紧密交流的社区。
-            </p>
-            <p>
-              联系方式：<a href="mailto:irishen16@outlook.com"
-                >irishen16@outlook.com</a
-              >
-            </p>
-          </div>
-        </div>
-        <figure class="profile">
-          <img
-            id="profile-img"
-            src="assets/img/profile.png"
-            alt="Portrait of Iris Shen"
+    <button
+      class="menu-trigger"
+      id="menu-trigger"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-overlay"
+      aria-label="Open index menu"
+    >
+      <svg
+        class="menu-trigger-mark"
+        viewBox="0 0 256 256"
+        aria-hidden="true"
+      >
+        <g class="menu-trigger-shadow">
+          <path
+            d="M70.41,224.08c-7.86-4.4-14.61-9.15-20.24-14.25-5.64-5.1-9.95-10.32-12.92-15.66l14.3-21.25c2.96,5.79,7.01,11.45,12.18,16.97,5.17,5.53,11.33,10.3,18.49,14.31,5.07,2.84,10.15,4.71,15.27,5.62,5.11.91,10.09.83,14.93-.25,4.85-1.07,9.34-3.26,13.49-6.56,4.13-3.3,7.78-7.75,10.91-13.34,2.64-4.72,4.26-9.26,4.87-13.63.6-4.36.35-9.44-.77-15.22-1.12-5.79-3.23-12.88-6.33-21.27-2.8-7.3-4.92-14.28-6.36-20.93-1.44-6.66-1.69-13.28-.75-19.87.93-6.59,3.4-13.46,7.41-20.63,4.69-8.39,10.23-15.1,16.6-20.14,6.38-5.04,13.37-8.52,20.99-10.45,7.62-1.93,15.52-2.21,23.71-.84,8.18,1.36,16.38,4.34,24.6,8.94,7.16,4.01,13.64,8.84,19.42,14.49,5.79,5.65,10.21,11.28,13.27,16.89l-20.56,13.97c-2.72-4.97-6.15-9.81-10.28-14.53-4.13-4.72-8.82-8.55-14.06-11.48-4.55-2.54-9.13-4.19-13.76-4.95-4.62-.75-9.19-.6-13.67.44-4.49,1.05-8.61,3.1-12.39,6.15-3.78,3.05-7.08,7.11-9.91,12.18s-4.44,9.97-4.79,14.7c-.35,4.74.19,9.91,1.63,15.54,1.44,5.62,3.51,12.18,6.21,19.65,2.87,7.57,4.91,14.68,6.13,21.33,1.21,6.64,1.31,13.24.29,19.78-1.02,6.54-3.58,13.48-7.69,20.82-4.79,8.56-10.43,15.56-16.91,20.99-6.48,5.44-13.65,9.23-21.51,11.37-7.86,2.15-16.14,2.5-24.86,1.06-8.72-1.44-17.7-4.75-26.97-9.93Z"
           />
-        </figure>
+          <circle cx="21.47" cy="162.73" r="14.78" />
+        </g>
+        <g class="menu-trigger-main">
+          <path
+            d="M62.98,211.26c-7.86-4.4-14.61-9.15-20.24-14.25-5.64-5.1-9.95-10.32-12.92-15.66l14.3-21.25c2.96,5.79,7.01,11.45,12.18,16.97,5.17,5.53,11.33,10.3,18.49,14.31,5.07,2.84,10.15,4.71,15.27,5.62,5.11.91,10.09.83,14.93-.25,4.85-1.07,9.34-3.26,13.49-6.56,4.13-3.3,7.78-7.75,10.91-13.34,2.64-4.72,4.26-9.26,4.87-13.63.6-4.36.35-9.44-.77-15.22-1.12-5.79-3.23-12.88-6.33-21.27-2.8-7.3-4.92-14.28-6.36-20.93-1.44-6.66-1.69-13.28-.75-19.87.93-6.59,3.4-13.46,7.41-20.63,4.69-8.39,10.23-15.1,16.6-20.14,6.38-5.04,13.37-8.52,20.99-10.45,7.62-1.93,15.52-2.21,23.71-.84,8.18,1.36,16.38,4.34,24.6,8.94,7.16,4.01,13.64,8.84,19.42,14.49,5.79,5.65,10.21,11.28,13.27,16.89l-20.56,13.97c-2.72-4.97-6.15-9.81-10.28-14.53-4.13-4.72-8.82-8.55-14.06-11.48-4.55-2.54-9.13-4.19-13.76-4.95-4.62-.75-9.19-.6-13.67.44-4.49,1.05-8.61,3.1-12.39,6.15-3.78,3.05-7.08,7.11-9.91,12.18s-4.44,9.97-4.79,14.7c-.35,4.74.19,9.91,1.63,15.54,1.44,5.62,3.51,12.18,6.21,19.65,2.87,7.57,4.91,14.68,6.13,21.33,1.21,6.64,1.31,13.24.29,19.78-1.02,6.54-3.58,13.48-7.69,20.82-4.79,8.56-10.43,15.56-16.91,20.99-6.48,5.44-13.65,9.23-21.51,11.37-7.86,2.15-16.14,2.5-24.86,1.06-8.72-1.44-17.7-4.75-26.97-9.93Z"
+          />
+          <circle class="menu-trigger-dot" cx="16.64" cy="153.15" r="14.78" />
+        </g>
+      </svg>
+    </button>
+
+    <div class="site-overlay" id="site-overlay" aria-hidden="true">
+      <div class="container site-overlay-inner">
+        <section class="site-overlay-frame" aria-labelledby="overlay-title">
+          <div class="landing-nav-column">
+            <p class="section-kicker" data-i18n="landing_kicker">Index</p>
+            <h1
+              class="landing-heading"
+              id="overlay-title"
+              data-i18n="landing_heading"
+            >
+              A calm architectural index.
+            </h1>
+            <div class="landing-links">
+              <a
+                class="landing-link"
+                href="index.html"
+                data-preview-target="work"
+                data-preview-kicker="Portfolio"
+                data-preview-title="Selected Works"
+                data-preview-text="Architecture, interiors, visualization, and design research."
+                data-preview-image="assets/img/zisha/site-1.jpg"
+              >
+                <span class="landing-link-label" data-i18n="landing_work"
+                  >Selected Works</span
+                >
+                <span class="landing-link-meta">01</span>
+              </a>
+              <a
+                class="landing-link"
+                href="about.html"
+                aria-current="page"
+                data-preview-target="about"
+                data-preview-kicker="Background"
+                data-preview-title="About ME"
+                data-preview-text="Thoughts, experiences, and interests shaping my approach to space and design."
+                data-preview-image="assets/img/if eaves dropped/lo.jpg"
+                data-preview-image-secondary="assets/img/if eaves dropped/lon.jpg"
+              >
+                <span class="landing-link-label" data-i18n="landing_about"
+                  >About ME</span
+                >
+                <span class="landing-link-meta">02</span>
+              </a>
+              <a
+                class="landing-link"
+                href="mailto:irishen16@outlook.com"
+                data-preview-target="contact"
+                data-preview-kicker="Direct"
+                data-preview-title="Contact"
+                data-preview-text="For projects, collaborations, or simply exchanging ideas."
+                data-preview-image="assets/img/if eaves dropped/IMG_1701.jpg"
+                data-contact-email="irishen16@outlook.com"
+                data-contact-linkedin="www.linkedin.com/in/irishen-design"
+                data-contact-github="github.com/irishen-design"
+              >
+                <span class="landing-link-label" data-i18n="contact"
+                  >Get in touch</span
+                >
+                <span class="landing-link-meta">03</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="landing-preview" aria-live="polite">
+            <p class="landing-preview-kicker" id="landing-preview-kicker">
+              Portfolio
+            </p>
+            <h2 class="landing-preview-title" id="landing-preview-title">
+              Selected Works
+            </h2>
+            <p class="landing-preview-text" id="landing-preview-text">
+              A project-led overview with one anchor project and a quieter grid
+              of selected work.
+            </p>
+            <div class="landing-preview-media">
+              <img
+                id="landing-preview-image"
+                src="assets/img/zisha/site-1.jpg"
+                alt="Selected work preview"
+              />
+              <img
+                class="landing-preview-image-secondary"
+                id="landing-preview-image-secondary"
+                src=""
+                alt=""
+                hidden
+              />
+            </div>
+            <div class="landing-preview-contact" id="landing-preview-contact" hidden>
+              <a class="landing-contact-row" id="landing-contact-email" href="mailto:irishen16@outlook.com">
+                <span class="landing-contact-label">Email</span>
+                <span class="landing-contact-value">irishen16@outlook.com</span>
+              </a>
+              <a class="landing-contact-row" id="landing-contact-linkedin" href="https://www.linkedin.com/in/irishen-design" target="_blank" rel="noreferrer">
+                <span class="landing-contact-label landing-contact-label--logo">
+                  <img src="assets/img/linkedin logo.png" alt="LinkedIn" />
+                </span>
+                <span class="landing-contact-value">www.linkedin.com/in/irishen-design</span>
+              </a>
+              <a class="landing-contact-row" id="landing-contact-github" href="https://github.com/irishen-design" target="_blank" rel="noreferrer">
+                <span class="landing-contact-label landing-contact-label--logo">
+                  <img src="assets/img/github logo.svg" alt="GitHub" />
+                </span>
+                <span class="landing-contact-value">github.com/irishen-design</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <main class="container about" id="timeline">
+      <div class="about-layout">
+        <section class="about-intro">
+          <h1 data-i18n="about_title">About ME</h1>
+          <p class="about-summary" data-about="summary">
+            Architectural designer working across education, cultural projects,
+            and professional practice between New York, Shanghai, and Tokyo.
+          </p>
+          <figure class="about-profile">
+            <img
+              class="about-profile-image about-profile-image--primary"
+              src="assets/img/p1.png"
+              alt="Portrait of Iris Shen"
+            />
+            <img
+              class="about-profile-image about-profile-image--secondary"
+              src="assets/img/p2.png"
+              alt="Portrait of Iris Shen"
+            />
+          </figure>
+        </section>
+
+        <section class="about-timeline" aria-label="Professional timeline">
+          <svg
+            class="about-timeline-curve"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M 34 112 C 37 91, 43 66, 51 40 C 59 16, 72 1, 94 -2"
+            ></path>
+          </svg>
+
+          <div class="timeline-item timeline-item--born">
+            <div class="timeline-year" data-about="born.year">1996</div>
+            <div class="timeline-bar" aria-hidden="true"></div>
+            <div class="timeline-detail" data-about="born.label">
+              Born in Shanghai, China
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-item--pratt-start">
+            <div class="timeline-year" data-about="timeline.pratt_start.year">
+              2015
+            </div>
+            <div class="timeline-bar" aria-hidden="true"></div>
+          </div>
+
+          <div class="timeline-item timeline-item--pratt-end">
+            <div class="timeline-year" data-about="timeline.pratt_end.year">
+              2020
+            </div>
+            <div class="timeline-bar" aria-hidden="true"></div>
+            <div class="timeline-detail">
+              <span
+                class="timeline-detail-title"
+                data-about="timeline.pratt_end.title"
+                >Pratt Institute, Bachelor of Architecture</span
+              >
+              <span
+                class="timeline-detail-location"
+                data-about="timeline.pratt_end.location"
+                >New York City</span
+              >
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-item--kengo">
+            <div class="timeline-year" data-about="timeline.kengo_end.year">
+              2022
+            </div>
+            <div class="timeline-bar" aria-hidden="true"></div>
+            <div class="timeline-detail">
+              <span
+                class="timeline-detail-title"
+                data-about="timeline.kengo_end.title"
+                >Kengo Kuma and Associates</span
+              >
+              <span
+                class="timeline-detail-location"
+                data-about="timeline.kengo_end.location"
+                >Shanghai</span
+              >
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-item--makethouse">
+            <div class="timeline-year" data-about="timeline.makethouse.year">
+              2024
+            </div>
+            <div class="timeline-bar" aria-hidden="true"></div>
+            <div class="timeline-detail">
+              <span
+                class="timeline-detail-title"
+                data-about="timeline.makethouse.title"
+                >MakeHouse</span
+              >
+              <span
+                class="timeline-detail-location"
+                data-about="timeline.makethouse.location"
+                >Tokyo</span
+              >
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-item--present">
+            <div class="timeline-year" data-about="present.year">Present</div>
+            <div class="timeline-bar" aria-hidden="true"></div>
+            <div class="timeline-detail">
+              <span
+                class="timeline-detail-title"
+                data-about="timeline.tange_start.title"
+                >Tange Associates</span
+              >
+              <span
+                class="timeline-detail-location"
+                data-about="timeline.tange_start.location"
+                >Tokyo</span
+              >
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-item--future">
+            <div
+              class="timeline-detail timeline-detail--accent"
+              data-about="future.note"
+            >
+              Where to next...?
+            </div>
+            <div class="timeline-bar" aria-hidden="true"></div>
+          </div>
+        </section>
       </div>
     </main>
 
@@ -126,6 +326,7 @@
     <div id="cursor" class="cursor" aria-hidden="true"></div>
 
     <script src="assets/i18n.js"></script>
+    <script src="assets/work-content.js"></script>
     <script src="assets/script.js"></script>
     <script>
       document.getElementById("year") &&
