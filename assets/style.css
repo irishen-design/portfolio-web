@@ -1391,18 +1391,230 @@ img {
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 820px), (hover: none) and (pointer: coarse) {
+  .site-overlay-inner {
+    padding-top: 92px;
+    padding-bottom: 20px;
+  }
+  .site-overlay-frame {
+    min-height: auto;
+    height: auto;
+    gap: 0;
+  }
+  .landing-nav-column {
+    justify-content: flex-start;
+    min-height: auto;
+  }
+  .landing-heading {
+    margin-bottom: 24px;
+    font-size: clamp(2rem, 10vw, 3.1rem);
+    max-width: none;
+  }
+  .landing-links {
+    margin-top: 8px;
+  }
+  .site-overlay .landing-link,
+  .site-overlay .landing-link:not(.is-active) {
+    opacity: 1;
+    transform: none;
+  }
+  .landing-link {
+    padding: 20px 0;
+  }
+  .landing-link-label {
+    font-size: clamp(1.35rem, 7vw, 2rem);
+  }
+  .landing-link-meta {
+    font-size: 0.76rem;
+  }
+  .landing-preview {
+    display: none;
+  }
+
+  .work-main {
+    padding-top: calc(var(--header-offset) + 12px);
+    padding-bottom: 52px;
+  }
+  .work-hero {
+    margin-bottom: 40px;
+  }
+  .work-hero-card {
+    gap: 18px;
+  }
+  .work-hero-media img {
+    min-height: 280px;
+  }
+  .work-hero-copy {
+    padding: 0;
+  }
+  .work-hero-copy h1 {
+    font-size: clamp(1.95rem, 9.5vw, 3rem);
+    white-space: normal;
+  }
+  .work-hero-meta {
+    margin-top: 14px;
+    font-size: 0.96rem;
+  }
+  .work-hero-brief {
+    margin-top: 14px;
+    max-width: none;
+    font-size: 0.98rem;
+  }
+  .work-hero-cta {
+    margin-top: 18px;
+  }
+  .work-list {
+    gap: 24px;
+  }
+  .work-feature {
+    gap: 14px;
+  }
+  .work-feature-copy h2,
+  .work-feature--break .work-feature-copy h2 {
+    font-size: clamp(1.9rem, 8vw, 2.8rem);
+    white-space: normal;
+  }
+  .work-feature-meta,
+  .work-feature-brief,
+  .work-feature-cta {
+    font-size: 0.98rem;
+  }
+  .work-feature-brief {
+    max-width: none;
+  }
+  .work-item--birkenstock,
+  .work-item--closer {
+    margin-left: 0;
+  }
+  .work-item h3 {
+    font-size: 1.1rem;
+    line-height: 1.08;
+  }
+  .work-item h3 .meta,
+  .work-item h3 .title-break {
+    display: inline;
+  }
+  .work-item p {
+    font-size: 0.96rem;
+  }
+
+  .about {
+    padding-top: 16px;
+  }
+  .about-layout {
+    gap: 28px;
+  }
+  .about-intro h1 {
+    font-size: clamp(2.3rem, 10vw, 3.5rem);
+  }
+  .about-summary {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+  .about-profile {
+    aspect-ratio: 4 / 4.6;
+  }
+  .about-profile:hover .about-profile-image--primary,
+  .about-profile:focus-within .about-profile-image--primary {
+    opacity: 1;
+  }
+  .about-profile:hover .about-profile-image--secondary,
+  .about-profile:focus-within .about-profile-image--secondary {
+    opacity: 0;
+  }
+  .about-timeline {
+    min-height: auto;
+    padding: 6px 0 0 0;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .about-timeline-curve {
+    display: none;
+  }
+  .timeline-item {
+    position: static;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 14px;
+    row-gap: 8px;
+    align-items: start;
+    --year-shift: 0px;
+    --bar-width: 48px;
+  }
+  .timeline-year {
+    grid-column: 1;
+    grid-row: 1;
+    transform: none;
+    font-size: clamp(1rem, 4.8vw, 1.4rem);
+  }
+  .timeline-bar,
+  .timeline-item--born .timeline-bar,
+  .timeline-item--pratt-start .timeline-bar {
+    grid-column: 1;
+    grid-row: 2;
+    width: var(--bar-width);
+    height: 2px;
+  }
+  .timeline-detail,
+  .timeline-item--born .timeline-detail,
+  .timeline-item--pratt-end .timeline-detail,
+  .timeline-item--kengo .timeline-detail,
+  .timeline-item--makethouse .timeline-detail,
+  .timeline-item--present .timeline-detail,
+  .timeline-item--future .timeline-detail {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    padding-top: 0;
+    transform: none;
+    font-size: 0.96rem;
+    line-height: 1.2;
+  }
+  .timeline-detail-title {
+    white-space: normal;
+  }
+  .timeline-detail-location {
+    white-space: normal;
+  }
+  .timeline-item--future {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 8px;
+    margin-top: 4px;
+  }
+  .timeline-item--future .timeline-detail {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .timeline-item--future .timeline-detail--accent {
+    font-size: clamp(1.15rem, 5vw, 1.55rem);
+    white-space: normal;
+  }
+  .timeline-item--future .timeline-bar {
+    grid-column: 1;
+    grid-row: 2;
+    width: 92px;
+  }
+}
 @media (max-width: 720px) {
   :root {
     --header-offset: 104px;
   }
   .header-inner,
   .header-inner-minimal {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
   }
   .header-inner-minimal .controls {
-    margin-right: 0;
-    justify-self: start;
+    margin-right: 58px;
+    justify-self: end;
   }
   .menu-trigger {
     top: 14px;
@@ -1586,5 +1798,46 @@ button,
     )
     .cursor {
     transform: translate(var(--cx, -100px), var(--cy, -100px)) scale(1.25);
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  :root {
+    --touch-trigger-size: 50px;
+    --touch-trigger-right: 12px;
+    --touch-trigger-gap: 24px;
+  }
+  .header-inner-minimal {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding-right: calc(
+      var(--touch-trigger-size) + var(--touch-trigger-right) +
+        var(--touch-trigger-gap)
+    );
+  }
+  .header-inner-minimal .controls {
+    margin-right: 0;
+    justify-self: end;
+  }
+  .menu-trigger {
+    top: 14px;
+    right: var(--touch-trigger-right);
+    width: var(--touch-trigger-size);
+    height: var(--touch-trigger-size);
+  }
+  .landing-link:hover,
+  .landing-link:focus-visible,
+  .landing-link[aria-current="page"],
+  .landing-link.is-active,
+  .landing-contact-row:hover,
+  .landing-contact-row:focus-visible {
+    transform: none;
+  }
+  .work-hero-card[data-card]:hover img,
+  .work-feature[data-card]:hover img {
+    transform: none;
+  }
+  .work-hero-card[data-card]:hover .work-hero-media::after,
+  .work-feature--break[data-card]:hover .work-feature-media::after {
+    opacity: 0;
+    box-shadow: none;
   }
 }
