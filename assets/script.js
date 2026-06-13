@@ -1,14 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   // Init theme + lang
+  if (window.SiteContentReady && typeof window.SiteContentReady.then === "function") {
+    try {
+      await window.SiteContentReady;
+    } catch (error) {
+      console.warn("SiteContentReady failed; continuing with existing markup.", error);
+    }
+  }
+
   if (window.SiteUI && typeof window.SiteUI.init === "function") {
     try {
-      window.SiteUI.init();
+      await window.SiteUI.init();
     } catch (error) {
       console.warn("SiteUI.init failed; continuing with default UI state.", error);
     }
   }
 
   const modalBackdrop = document.getElementById("modal-backdrop");
+  const modal = modalBackdrop ? modalBackdrop.querySelector(".modal") : null;
   const modalTitle = document.getElementById("modal-title");
   const modalYear = document.getElementById("modal-year");
   const modalLocation = document.getElementById("modal-location");
@@ -62,6 +71,46 @@ document.addEventListener("DOMContentLoaded", () => {
     const store = window.SiteContent && window.SiteContent.about;
     if (!store) return null;
     return store[lang] || store.en || null;
+  }
+
+  function getRawProject(projectId) {
+    const projects = window.SiteContentRaw && Array.isArray(window.SiteContentRaw.projects)
+      ? window.SiteContentRaw.projects
+      : [];
+    return projects.find((project) => project.id === projectId) || null;
+  }
+
+  function getLocalizedValue(value, lang) {
+    if (typeof value === "string") return value;
+    if (!value || typeof value !== "object") return "";
+    return value[lang] || value.en || "";
+  }
+
+  function getProjectImages(projectId, lang) {
+    const project = getRawProject(projectId);
+    const gallery =
+      project && project.images && Array.isArray(project.images.gallery)
+        ? project.images.gallery
+        : [];
+
+    if (gallery.length) {
+      return gallery.map((item) => ({
+        src: item.path,
+        alt: getLocalizedValue(item.alt, lang),
+        caption: getLocalizedValue(item.caption, lang),
+        variant: item.displayVariant || "",
+        imageOrder: item.imageOrder || 0,
+      }));
+    }
+
+    const fallback = projectId && GALLERIES[projectId] ? GALLERIES[projectId] : [];
+    return fallback.map((item, index) => ({
+      src: item.src,
+      alt: item.alt || "",
+      caption: item.caption || "",
+      variant: item.variant || "",
+      imageOrder: index * 10,
+    }));
   }
 
   function setAboutText(key, value) {
@@ -124,6 +173,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (landingContactEmail) {
         landingContactEmail.href = `mailto:${email}`;
+        const label = landingContactEmail.querySelector(".landing-contact-label");
+        if (label && email && window.SiteContent && window.SiteContent.site) {
+          const currentLang = document.documentElement.lang || "en";
+          const item = (window.SiteContent.site.contact.items || []).find(
+            (entry) => entry.id === "email"
+          );
+          label.textContent =
+            (item &&
+              item.label &&
+              (item.label[currentLang] || item.label.en || item.id || "Email")) ||
+            "Email";
+        }
         const value = landingContactEmail.querySelector(".landing-contact-value");
         if (value) value.textContent = email;
       }
@@ -250,6 +311,15 @@ document.addEventListener("DOMContentLoaded", () => {
       link.setAttribute("data-preview-kicker", preview.kicker || "");
       link.setAttribute("data-preview-title", preview.title || "");
       link.setAttribute("data-preview-text", preview.text || "");
+      if (target === "contact" && window.SiteContent && window.SiteContent.site) {
+        const items = window.SiteContent.site.contact.items || [];
+        const email = items.find((item) => item.id === "email");
+        const linkedin = items.find((item) => item.id === "linkedin");
+        const github = items.find((item) => item.id === "github");
+        if (email) link.setAttribute("data-contact-email", email.value || "");
+        if (linkedin) link.setAttribute("data-contact-linkedin", linkedin.value || "");
+        if (github) link.setAttribute("data-contact-github", github.value || "");
+      }
     });
     applyLandingPreview(
       document.querySelector(".landing-link.is-active") || landingLinks[0]
@@ -264,7 +334,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (heroArticle && heroProject && hero) {
       setProjectDataset(heroArticle, heroProject);
       const heroImg = heroArticle.querySelector(".work-hero-media img");
-      if (heroImg) heroImg.alt = hero.imageAlt || heroProject.imageAlt || hero.title;
+      if (heroImg) {
+        if (heroProject.coverImage) heroImg.src = heroProject.coverImage;
+        heroImg.alt = hero.imageAlt || heroProject.imageAlt || hero.title;
+      }
       const heroKicker = heroArticle.querySelector(".section-kicker");
       const heroTitle = heroArticle.querySelector("#work-hero-title");
       const heroMeta = heroArticle.querySelector(".work-hero-meta");
@@ -278,14 +351,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const zhangyuanFeature = document.querySelector(
-      '.work-feature[data-id="zhangyuan"]'
+      '.work-feature[data-id="zhangyuan_museum"]'
     );
-    const zhangyuanProject = content.projects.zhangyuan;
+    const zhangyuanProject = content.projects.zhangyuan_museum;
     const zhangyuanFeatureContent = content.features.zhangyuan;
     if (zhangyuanFeature && zhangyuanProject && zhangyuanFeatureContent) {
       setProjectDataset(zhangyuanFeature, zhangyuanProject);
       const img = zhangyuanFeature.querySelector(".work-feature-media img");
       if (img) {
+        if (zhangyuanProject.coverImage) img.src = zhangyuanProject.coverImage;
         img.alt =
           zhangyuanFeatureContent.imageAlt || zhangyuanProject.imageAlt || "";
       }
@@ -311,7 +385,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!project) return;
       setProjectDataset(article, project);
       const img = article.querySelector("img");
-      if (img) img.alt = project.imageAlt || project.title || "";
+      if (img) {
+        if (project.coverImage) img.src = project.coverImage;
+        img.alt = project.imageAlt || project.title || "";
+      }
       const heading = article.querySelector("h3");
       renderCardHeading(heading, project);
       const location = article.querySelector("p");
@@ -415,16 +492,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Project galleries (keyed by each card's data-id)
   const GALLERIES = {
-    zisha: [
-      { src: "assets/img/zisha/cover.jpg", alt: "UCCA Clay Museum cover" },
-      { src: "assets/img/zisha/site-1.jpg", alt: "Site view" },
-      { src: "assets/img/zisha/interior-1.jpg", alt: "Interior view" },
-      { src: "assets/img/zisha/cave-1.jpg", alt: "Cave-like gallery space" },
-      { src: "assets/img/zisha/IMG_5753_p.jpg", alt: "Ceramic detail" },
-      { src: "assets/img/zisha/sketch-4.png", alt: "Concept sketch 1" },
-      { src: "assets/img/zisha/sketch-5.png", alt: "Concept sketch 2" },
+    zisha_museum: [
+      { src: "assets/img/zisha/site-1.jpg", alt: "Aerial site view", variant: "hero" },
+      {
+        src: "assets/img/zisha-ecosystem-diagram.svg",
+        alt: "Ecosystem diagram for UCCA Clay Museum",
+        variant: "diagram",
+      },
+      {
+        src: "assets/img/zisha/interior-1.jpg",
+        alt: "Interior view of the museum from 2F",
+        variant: "wide",
+      },
+      {
+        src: "assets/img/zisha/0923结构模型分析图.png",
+        alt: "Exploded Axonometric Diagram",
+        variant: "diagram",
+      },
+      {
+        src: "assets/img/zisha/cave-1.jpg",
+        alt: "Exterior view of the plaza",
+        variant: "full",
+      },
+      { src: "assets/img/zisha/sketch-4.png", alt: "Concept sketch 1", variant: "narrow" },
+      { src: "assets/img/zisha/sketch-5.png", alt: "Concept sketch 2", variant: "narrow" },
     ],
-    vc: [
+    visional_city: [
       {
         src: "assets/img/VC/axon.png",
         alt: "Axonometric Diagram",
@@ -450,7 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alt: "Roof Plan",
       },
     ],
-    thesis: [
+    if_eaves_dropped: [
       {
         src: "assets/img/if eaves dropped/section.gif",
         alt: "Rethinking Privacy — animated section",
@@ -488,7 +581,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alt: "Private Plan",
       },
     ],
-    dirtyrealism: [
+    confusion_new_civic: [
       {
         src: "assets/img/dirty realism/cover.jpg",
         alt: "Conceptual Entry Render",
@@ -514,26 +607,55 @@ document.addEventListener("DOMContentLoaded", () => {
         alt: "Conceptual Experiencial Render",
       },
     ],
-    zhangyuan: [
+    zhangyuan_museum: [
       {
         src: "assets/img/zhangyuan/cover.jpg",
         alt: "Bird's Eye View of Zhangyuan",
+        variant: "hero",
       },
       {
         src: "assets/img/zhangyuan/Masterplan 1to500.jpg",
         alt: "Site Plan",
+        variant: "diagram",
       },
       {
-        src: "assets/img/zhangyuan/model.jpg",
+        src: "assets/img/zhangyuan/model.png",
         alt: "Model Shot",
+        variant: "wide",
       },
       {
         src: "assets/img/zhangyuan/south1.jpg",
         alt: "South View",
+        variant: "full",
       },
       {
         src: "assets/img/zhangyuan/211108 plaza 2-2.png",
         alt: "Sunken Plaza",
+        variant: "narrow",
+      },
+    ],
+    porosity_tama: [
+      {
+        src: "assets/img/tama/Tama_worm_s.jpg",
+        alt: "Worm's Eye View",
+      },
+    ],
+    wuxi_concert_hall: [
+      {
+        src: "assets/img/wuxi/cover.jpg",
+        alt: "Main Concept",
+      },
+    ],
+    fluid_yet_defined: [
+      {
+        src: "assets/img/boathouse/cover.jpg",
+        alt: "Model Shot",
+      },
+    ],
+    birkenstock_harajuku: [
+      {
+        src: "assets/img/birkenstock/cover2.png",
+        alt: "Entrance Render",
       },
     ],
   };
@@ -543,6 +665,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
   let keyHandlerBound = null;
   let lightboxKeyHandler = null;
+  const EDITORIAL_PROJECTS = new Set(["zisha_museum", "zhangyuan_museum"]);
 
   function renderMainImage(title) {
     if (!carouselImg || !currentImages.length) return;
@@ -651,28 +774,40 @@ document.addEventListener("DOMContentLoaded", () => {
       modalExperience.textContent = data.experience || "—";
     }
 
+    const isEditorial = !!(data.id && EDITORIAL_PROJECTS.has(data.id));
+    if (modal) {
+      modal.classList.toggle("modal--editorial", isEditorial);
+    }
+
     // Populate gallery if available for this data.id
     if (modalGallery) {
       modalGallery.innerHTML = "";
-      // Look up the gallery array by the project's id
-      const images = data.id && GALLERIES[data.id] ? GALLERIES[data.id] : null;
-      currentImages = images || [];
+      currentImages = data.id ? getProjectImages(data.id, lang) : [];
       currentIndex = 0;
       if (currentImages.length) {
         modalGallery.style.display = "";
         currentImages.forEach((img, i) => {
-          const wrap = document.createElement("div");
-          wrap.className = "item";
+          const wrap = document.createElement(isEditorial ? "figure" : "div");
+          wrap.className = `item${isEditorial ? ` item--stack item--${img.variant || "full"}` : ""}`;
           const el = document.createElement("img");
           el.loading = "lazy";
           el.src = img.src;
           el.alt = img.alt || data.title;
-          // Clicking a thumbnail jumps main viewer to that image
           wrap.addEventListener("click", () => {
             currentIndex = i;
+            if (isEditorial) {
+              openLightbox(data.title);
+              return;
+            }
             renderMainImage(data.title);
           });
           wrap.appendChild(el);
+          if (isEditorial && img.caption) {
+            const caption = document.createElement("figcaption");
+            caption.className = "modal-media-caption";
+            caption.textContent = img.caption;
+            wrap.appendChild(caption);
+          }
           modalGallery.appendChild(wrap);
         });
       } else {
@@ -682,7 +817,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Setup carousel image and controls
     if (modalCarousel) {
-      if (currentImages.length) {
+      if (currentImages.length && !isEditorial) {
         modalCarousel.style.display = "";
         renderMainImage(data.title);
         // Bind nav buttons
@@ -699,6 +834,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("keydown", keyHandlerBound);
       } else {
         modalCarousel.style.display = "none";
+        keyHandlerBound = (e) => {
+          if (e.key === "Escape") closeModal();
+        };
+        document.addEventListener("keydown", keyHandlerBound);
       }
     }
 
@@ -707,6 +846,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeModal() {
     modalBackdrop.style.display = "none";
+    if (modal) {
+      modal.classList.remove("modal--editorial");
+    }
     // Clean up key handler when closing
     if (keyHandlerBound) {
       document.removeEventListener("keydown", keyHandlerBound);

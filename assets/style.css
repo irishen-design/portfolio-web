@@ -876,6 +876,12 @@ img {
 .modal .body {
   padding: 16px 20px 24px 20px;
 }
+.modal--editorial {
+  max-width: 1120px;
+}
+.modal--editorial .body {
+  padding: 18px 24px 30px 24px;
+}
 .meta-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -894,6 +900,12 @@ img {
   color: var(--fg);
   padding: 6px 10px;
   border-radius: 999px;
+}
+.modal--editorial #modal-brief {
+  margin: 14px 0 0 0;
+  max-width: none;
+  color: var(--muted);
+  line-height: 1.7;
 }
 .about {
   padding: calc(var(--header-offset) + 24px) 0 72px 0;
@@ -1339,6 +1351,65 @@ img {
   outline: 2px solid var(--fg);
   outline-offset: 2px;
 }
+.modal--editorial .gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 26px;
+}
+.modal--editorial .gallery .item {
+  margin: 0;
+  width: 100%;
+  overflow: visible;
+}
+.modal--editorial .gallery .item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 18px;
+  background: transparent;
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow-soft);
+  cursor: zoom-in;
+}
+.modal--editorial .gallery .item:hover img {
+  transform: none;
+}
+.modal--editorial .gallery .item--hero,
+.modal--editorial .gallery .item--full {
+  width: 100%;
+}
+.modal--editorial .gallery .item--wide {
+  width: min(88%, 920px);
+  margin-left: auto;
+}
+.modal--editorial .gallery .item--narrow {
+  width: min(68%, 700px);
+  margin-inline: auto;
+}
+.modal--editorial .gallery .item--diagram {
+  width: min(74%, 760px);
+  margin-inline: auto;
+  padding: 22px 22px 14px 22px;
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  background: color-mix(in oklab, white 58%, var(--accent) 6%, var(--card-bg) 36%);
+  box-shadow: var(--shadow-soft);
+}
+.modal--editorial .gallery .item--diagram img {
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+}
+.modal-media-caption {
+  margin: 10px 2px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
 
 @media (max-width: 980px) {
   .header-inner-minimal .controls {
@@ -1347,6 +1418,18 @@ img {
   .site-overlay-frame {
     grid-template-columns: 1fr;
     gap: 28px;
+  }
+  .modal {
+    border-radius: 20px;
+  }
+  .modal--editorial .meta-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal--editorial .gallery .item--wide,
+  .modal--editorial .gallery .item--narrow,
+  .modal--editorial .gallery .item--diagram {
+    width: 100%;
+    margin: 0;
   }
   .landing-heading {
     max-width: none;

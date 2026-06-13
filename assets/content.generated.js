@@ -1,0 +1,1741 @@
+window.__SITE_CONTENT_JSON__ = {
+  "meta": {
+    "generatedAt": "2026-06-13T01:20:09.864251+00:00",
+    "sourceWorkbook": "portfolio_content_master.xlsx",
+    "languages": [
+      "en",
+      "ja",
+      "zh"
+    ]
+  },
+  "site": {
+    "copy": {
+      "global": {
+        "site_title": {
+          "en": "Iris Shen",
+          "ja": "Iris Shen",
+          "zh": "Iris Shen",
+          "notes": "Header / browser title"
+        },
+        "brand": {
+          "en": "Iris Shen",
+          "ja": "Iris Shen",
+          "zh": "Iris Shen",
+          "notes": "Brand label"
+        },
+        "lang_label": {
+          "en": "Language",
+          "ja": "言語",
+          "zh": "语言",
+          "notes": "Language selector label"
+        }
+      },
+      "nav": {
+        "work": {
+          "en": "Selected Works",
+          "ja": "Selected Works",
+          "zh": "Selected Works",
+          "notes": "Overlay nav label"
+        },
+        "about": {
+          "en": "About ME",
+          "ja": "About ME",
+          "zh": "About ME",
+          "notes": "Overlay nav label"
+        },
+        "ai_coaching": {
+          "en": "AI Coaching",
+          "ja": "AI Coaching",
+          "zh": "AI Coaching",
+          "notes": "Navigation label"
+        },
+        "contact": {
+          "en": "Get in touch",
+          "ja": "連絡先",
+          "zh": "联系",
+          "notes": "Overlay nav label"
+        }
+      },
+      "hero": {
+        "index_label": {
+          "en": "Index",
+          "ja": "Index",
+          "zh": "索引",
+          "notes": "Orange index block eyebrow"
+        },
+        "index_title": {
+          "en": "Spatial practice.",
+          "ja": "Spatial practice.",
+          "zh": "Spatial practice.",
+          "notes": "Main index headline; can keep English as brand phrase"
+        },
+        "selected_title": {
+          "en": "Selected Works",
+          "ja": "Selected Works",
+          "zh": "Selected Works",
+          "notes": "Main work section title"
+        },
+        "selected_subtitle": {
+          "en": "Architecture, interiors, visualization, and design research.",
+          "ja": "Architecture, interiors, visualization, and design research.",
+          "zh": "Architecture, interiors, visualization, and design research.",
+          "notes": "Direction 4 selected subtitle"
+        }
+      },
+      "about": {
+        "title": {
+          "en": "About ME",
+          "ja": "About ME",
+          "zh": "About ME",
+          "notes": "Section title"
+        },
+        "subtitle": {
+          "en": "A short introduction to my background, design approach, and evolving creative practice.",
+          "ja": "A short introduction to my background, design approach, and evolving creative practice.",
+          "zh": "A short introduction to my background, design approach, and evolving creative practice.",
+          "notes": "Subtitle from selected direction"
+        },
+        "bio": {
+          "en": "Architectural designer currently based in Tokyo, working across architecture, interiors, visualization, and emerging design technologies. Drawn to projects that connect culture, memory, and public life, while constantly exploring how digital tools can reshape the way spaces are imagined and produced.",
+          "ja": "東京を拠点に、公共建築や商業複合施設の設計、ビジュアライゼーション、そして新たなデザインテクノロジーの領域を横断して活動する建築デザイナー。文化、記憶、公共空間の関係性に関心を持ちながら、テクノロジーを通して空間と人との関係をどのように再構築できるかを探求している。",
+          "zh": "现居东京的建筑设计师，工作涵盖公共建筑、商业综合体、可视化以及新兴设计科技领域。对于文化、记忆与公共空间之间的联系，同时乐于探索如何运用科技重新塑造空间与人的关系。",
+          "notes": "Website self intro"
+        }
+      },
+      "contact": {
+        "title": {
+          "en": "Contact",
+          "ja": "Contact",
+          "zh": "Contact",
+          "notes": "Contact preview title"
+        },
+        "subtitle": {
+          "en": "For projects, collaborations, or simply exchanging ideas.",
+          "ja": "For projects, collaborations, or simply exchanging ideas.",
+          "zh": "For projects, collaborations, or simply exchanging ideas.",
+          "notes": "Contact preview subtitle"
+        }
+      },
+      "project": {
+        "open_project": {
+          "en": "Open project",
+          "ja": "Open project",
+          "zh": "Open project",
+          "notes": "CTA label"
+        },
+        "close": {
+          "en": "Close",
+          "ja": "Close",
+          "zh": "Close",
+          "notes": "Modal close label"
+        },
+        "year": {
+          "en": "Year",
+          "ja": "Year",
+          "zh": "年份",
+          "notes": "Project detail label"
+        },
+        "location": {
+          "en": "Location",
+          "ja": "Location",
+          "zh": "地点",
+          "notes": "Project detail label"
+        },
+        "role": {
+          "en": "Role",
+          "ja": "Role",
+          "zh": "职责",
+          "notes": "Project detail label"
+        },
+        "experience": {
+          "en": "Experience",
+          "ja": "Experience",
+          "zh": "经验",
+          "notes": "Project detail label"
+        }
+      },
+      "footer": {
+        "copyright": {
+          "en": "© {year} Iris Shen",
+          "ja": "© {year} Iris Shen",
+          "zh": "© {year} Iris Shen",
+          "notes": "Footer"
+        }
+      },
+      "overlay": {
+        "index_kicker": {
+          "en": "Index",
+          "ja": "Index",
+          "zh": "索引",
+          "notes": "Overlay kicker"
+        },
+        "index_heading": {
+          "en": "Spatial practices.",
+          "ja": "Spatial practices.",
+          "zh": "Spatial practices.",
+          "notes": "Overlay main heading"
+        },
+        "work_kicker": {
+          "en": "Portfolio",
+          "ja": "Portfolio",
+          "zh": "Portfolio",
+          "notes": "Overlay work preview kicker"
+        },
+        "work_title": {
+          "en": "Selected Works",
+          "ja": "Selected Works",
+          "zh": "Selected Works",
+          "notes": "Overlay work preview title"
+        },
+        "work_text": {
+          "en": "Architecture, interiors, visualization, and design research.",
+          "ja": "Architecture, interiors, visualization, and design research.",
+          "zh": "Architecture, interiors, visualization, and design research.",
+          "notes": "Overlay work preview text"
+        },
+        "about_kicker": {
+          "en": "Background",
+          "ja": "Background",
+          "zh": "Background",
+          "notes": "Overlay about preview kicker"
+        },
+        "about_title": {
+          "en": "About ME",
+          "ja": "About ME",
+          "zh": "About ME",
+          "notes": "Overlay about preview title"
+        },
+        "about_text": {
+          "en": "Thoughts, experiences, and interests shaping my approach to space and design.",
+          "ja": "Thoughts, experiences, and interests shaping my approach to space and design.",
+          "zh": "Thoughts, experiences, and interests shaping my approach to space and design.",
+          "notes": "Overlay about preview text"
+        },
+        "contact_kicker": {
+          "en": "Direct",
+          "ja": "Direct",
+          "zh": "Direct",
+          "notes": "Overlay contact preview kicker"
+        },
+        "contact_title": {
+          "en": "Contact",
+          "ja": "Contact",
+          "zh": "Contact",
+          "notes": "Overlay contact preview title"
+        },
+        "contact_text": {
+          "en": "For projects, collaborations, or simply exchanging ideas.",
+          "ja": "For projects, collaborations, or simply exchanging ideas.",
+          "zh": "For projects, collaborations, or simply exchanging ideas.",
+          "notes": "Overlay contact preview text"
+        }
+      }
+    },
+    "about": {
+      "summary": {
+        "en": "Architectural designer currently based in Tokyo, working across architecture, interiors, visualization, and emerging design technologies. Drawn to projects that connect culture, memory, and public life, while constantly exploring how digital tools can reshape the way spaces are imagined and produced.",
+        "ja": "東京を拠点に、公共建築や商業複合施設の設計、ビジュアライゼーション、そして新たなデザインテクノロジーの領域を横断して活動する建築デザイナー。文化、記憶、公共空間の関係性に関心を持ちながら、テクノロジーを通して空間と人との関係をどのように再構築できるかを探求している。",
+        "zh": "现居东京的建筑设计师，工作涵盖公共建筑、商业综合体、可视化以及新兴设计科技领域。对于文化、记忆与公共空间之间的联系，同时乐于探索如何运用科技重新塑造空间与人的关系。"
+      },
+      "born": {
+        "year": {
+          "en": "1996",
+          "ja": "1996",
+          "zh": "1996"
+        },
+        "label": {
+          "en": "Born in Shanghai, China",
+          "ja": "Born in Shanghai, China",
+          "zh": "Born in Shanghai, China"
+        }
+      },
+      "present": {
+        "year": {
+          "en": "Present",
+          "ja": "Present",
+          "zh": "Present"
+        }
+      },
+      "future": {
+        "note": {
+          "en": "Where to NEXT?",
+          "ja": "Where to NEXT?",
+          "zh": "Where to NEXT?"
+        }
+      },
+      "timeline": [
+        {
+          "id": "pratt_start",
+          "sortOrder": 1,
+          "year": "2015",
+          "title": {
+            "en": "",
+            "ja": "",
+            "zh": ""
+          },
+          "location": {
+            "en": "",
+            "ja": "",
+            "zh": ""
+          },
+          "notes": "Start year marker only"
+        },
+        {
+          "id": "pratt_end",
+          "sortOrder": 2,
+          "year": "2020",
+          "title": {
+            "en": "Pratt Institute, Bachelor of Architecture",
+            "ja": "Pratt Institute, Bachelor of Architecture",
+            "zh": "Pratt Institute, Bachelor of Architecture"
+          },
+          "location": {
+            "en": "New York City",
+            "ja": "New York City",
+            "zh": "New York City"
+          },
+          "notes": ""
+        },
+        {
+          "id": "kengo_end",
+          "sortOrder": 3,
+          "year": "2022",
+          "title": {
+            "en": "Kengo Kuma and Associates",
+            "ja": "Kengo Kuma and Associates",
+            "zh": "Kengo Kuma and Associates"
+          },
+          "location": {
+            "en": "Shanghai",
+            "ja": "Shanghai",
+            "zh": "Shanghai"
+          },
+          "notes": ""
+        },
+        {
+          "id": "makethouse",
+          "sortOrder": 4,
+          "year": "2024",
+          "title": {
+            "en": "MakeHouse",
+            "ja": "MakeHouse",
+            "zh": "MakeHouse"
+          },
+          "location": {
+            "en": "Tokyo",
+            "ja": "Tokyo",
+            "zh": "Tokyo"
+          },
+          "notes": ""
+        },
+        {
+          "id": "tange_start",
+          "sortOrder": 5,
+          "year": "2024",
+          "title": {
+            "en": "Tange Associates",
+            "ja": "Tange Associates",
+            "zh": "Tange Associates"
+          },
+          "location": {
+            "en": "Tokyo",
+            "ja": "Tokyo",
+            "zh": "Tokyo"
+          },
+          "notes": "Shown under Present block on site"
+        }
+      ]
+    },
+    "contact": {
+      "items": [
+        {
+          "id": "email",
+          "label": {
+            "en": "Email",
+            "ja": "Email",
+            "zh": "Email"
+          },
+          "value": "irishen16@outlook.com",
+          "href": "mailto:irishen16@outlook.com",
+          "notes": ""
+        },
+        {
+          "id": "linkedin",
+          "label": {
+            "en": "LinkedIn",
+            "ja": "LinkedIn",
+            "zh": "LinkedIn"
+          },
+          "value": "www.linkedin.com/in/irishen-design",
+          "href": "https://www.linkedin.com/in/irishen-design",
+          "notes": ""
+        },
+        {
+          "id": "github",
+          "label": {
+            "en": "GitHub",
+            "ja": "GitHub",
+            "zh": "GitHub"
+          },
+          "value": "github.com/irishen-design",
+          "href": "https://github.com/irishen-design",
+          "notes": ""
+        }
+      ]
+    }
+  },
+  "projects": [
+    {
+      "id": "zisha_museum",
+      "slug": "ucca-clay-museum",
+      "sortOrder": 1,
+      "featured": true,
+      "category": "Professional",
+      "status": {
+        "en": "Built",
+        "ja": "竣工",
+        "zh": "建成"
+      },
+      "yearDisplay": "2020–2024",
+      "location": {
+        "en": "Yixing, China",
+        "ja": "中国・宜興",
+        "zh": "中国宜兴"
+      },
+      "role": {
+        "en": "Architecture, interior, landscape, furniture & signage; DD drawings",
+        "ja": "建築、インテリア、ランドスケープ、家具、サイン計画、実施設計図面",
+        "zh": "建筑、室内、景观、家具与标识；扩初/施工图阶段图纸"
+      },
+      "collaboratingFirm": "Kengo Kuma & Associates, Shanghai Office",
+      "sourceUrl": "https://irishen-design.github.io/portfolio-web/",
+      "notes": "Hero project",
+      "tags": [
+        {
+          "displayOrder": 1,
+          "label": {
+            "en": "Museum",
+            "ja": "美術館",
+            "zh": "美术馆"
+          }
+        },
+        {
+          "displayOrder": 2,
+          "label": {
+            "en": "Cultural",
+            "ja": "文化",
+            "zh": "文化"
+          }
+        },
+        {
+          "displayOrder": 3,
+          "label": {
+            "en": "Built",
+            "ja": "竣工",
+            "zh": "建成"
+          }
+        }
+      ],
+      "images": {
+        "cover": {
+          "imageOrder": 10,
+          "displayVariant": "cover",
+          "path": "assets/img/zisha/site-1.jpg",
+          "alt": {
+            "en": "UCCA Clay Museum aerial view",
+            "ja": "UCCA陶美術館の俯瞰",
+            "zh": "UCCA陶美术馆鸟瞰"
+          },
+          "caption": {
+            "en": "Cover image",
+            "ja": "カバー画像",
+            "zh": "封面图片"
+          },
+          "credit": "",
+          "notes": "Primary cover image for cards and hero"
+        },
+        "gallery": [
+          {
+            "imageOrder": 20,
+            "displayVariant": "hero",
+            "path": "assets/img/zisha/site-1.jpg",
+            "alt": {
+              "en": "Aerial Site View",
+              "ja": "敷地全景",
+              "zh": "UCCA陶美术馆场地鸟瞰"
+            },
+            "caption": {
+              "en": "Aerial Site View",
+              "ja": "敷地全景",
+              "zh": "UCCA陶美术馆场地鸟瞰"
+            },
+            "credit": "",
+            "notes": "Zisha pilot opener"
+          },
+          {
+            "imageOrder": 30,
+            "displayVariant": "diagram",
+            "path": "assets/img/zisha-ecosystem-diagram.svg",
+            "alt": {
+              "en": "Ecosystem Diagram",
+              "ja": "エコシステム図",
+              "zh": "生态系统图"
+            },
+            "caption": {
+              "en": "Ecosystem Diagram",
+              "ja": "エコシステム図",
+              "zh": "生态系统图"
+            },
+            "credit": "",
+            "notes": "Hero project ecosystem diagram"
+          },
+          {
+            "imageOrder": 40,
+            "displayVariant": "wide",
+            "path": "assets/img/zisha/interior-1.jpg",
+            "alt": {
+              "en": "Interior View from 2F",
+              "ja": "美術館2Fインテリア",
+              "zh": "美术馆2层室内空间"
+            },
+            "caption": {
+              "en": "Interior View from 2F",
+              "ja": "美術館2Fインテリア",
+              "zh": "美术馆2层室内空间"
+            },
+            "credit": "",
+            "notes": "Zisha pilot media"
+          },
+          {
+            "imageOrder": 50,
+            "displayVariant": "diagram",
+            "path": "assets/img/zisha/0923结构模型分析图.png",
+            "alt": {
+              "en": "Exploded Axonometric Diagram",
+              "ja": "アクソメダイアグラム",
+              "zh": "轴测图"
+            },
+            "caption": {
+              "en": "Exploded Axonometric Diagram",
+              "ja": "アクソメダイアグラム",
+              "zh": "轴测图"
+            },
+            "credit": "",
+            "notes": "Zisha pilot media"
+          },
+          {
+            "imageOrder": 60,
+            "displayVariant": "full",
+            "path": "assets/img/zisha/cave-1.jpg",
+            "alt": {
+              "en": "Exterior Plaza View",
+              "ja": "屋外広場",
+              "zh": "室外广场"
+            },
+            "caption": {
+              "en": "Exterior Plaza View",
+              "ja": "屋外広場",
+              "zh": "室外广场"
+            },
+            "credit": "",
+            "notes": "Zisha pilot media"
+          },
+          {
+            "imageOrder": 80,
+            "displayVariant": "narrow",
+            "path": "assets/img/zisha/sketch-4.png",
+            "alt": {
+              "en": "Concept Sketch 1",
+              "ja": "コンセプトスケッチ 1",
+              "zh": "概念草图 1"
+            },
+            "caption": {
+              "en": "Concept Sketch 1",
+              "ja": "コンセプトスケッチ 1",
+              "zh": "概念草图 1"
+            },
+            "credit": "",
+            "notes": "Zisha pilot media"
+          },
+          {
+            "imageOrder": 90,
+            "displayVariant": "narrow",
+            "path": "assets/img/zisha/sketch-5.png",
+            "alt": {
+              "en": "Concept Sketch 2",
+              "ja": "コンセプトスケッチ 2",
+              "zh": "概念草图 2"
+            },
+            "caption": {
+              "en": "Concept Sketch 2",
+              "ja": "コンセプトスケッチ 2",
+              "zh": "概念草图 2"
+            },
+            "credit": "",
+            "notes": "Zisha pilot media"
+          }
+        ]
+      },
+      "translations": {
+        "en": {
+          "cardKicker": "SELECTED WORK",
+          "cardTitle": "UCCA Clay Museum",
+          "cardDescription": "A public museum shaped through the spatial memory of the local dragon kiln, pairing ceramic material research with a quieter civic presence.",
+          "detailTitle": "UCCA Clay Museum",
+          "detailIntro": "Inspired by the local dragon kiln, the museum reinterprets Yixing’s clay culture through form, materiality, and public space.",
+          "detailBody1": "The project translates the heritage of purple clay and ceramic craft into a contemporary museum environment, connecting local material culture with a new public destination.",
+          "detailBody2": "Facade texture, roof geometry, and spatial sequence were developed through close studies of local kilns, ceramic samples, and construction logic.",
+          "detailBody3": "",
+          "metaYear": "2020–2024",
+          "metaStatus": "Built",
+          "metaLocation": "Yixing, China",
+          "metaRole": "Architecture, interior, landscape, furniture & signage; DD drawings",
+          "ctaLabel": "Open project",
+          "translationStatus": "Draft",
+          "lastUpdated": "2026-05-17",
+          "notes": ""
+        },
+        "ja": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2020–2024",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        },
+        "zh": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2020–2024",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "visional_city",
+      "slug": "closer-not-further",
+      "sortOrder": 2,
+      "featured": false,
+      "category": "Competition",
+      "status": {
+        "en": "Competition",
+        "ja": "コンペ",
+        "zh": "竞赛"
+      },
+      "yearDisplay": "2025",
+      "location": {
+        "en": "Meguro, Tokyo, Japan",
+        "ja": "東京・目黒",
+        "zh": "日本东京目黑"
+      },
+      "role": {
+        "en": "Concept, design, visualization, editorial narrative",
+        "ja": "コンセプト、設計、ビジュアライゼーション、編集構成",
+        "zh": "概念、设计、可视化、叙事整理"
+      },
+      "collaboratingFirm": "",
+      "sourceUrl": "https://irishen-design.github.io/portfolio-web/",
+      "notes": "Visional City Competition",
+      "tags": [
+        {
+          "displayOrder": 1,
+          "label": {
+            "en": "Competition",
+            "ja": "コンペ",
+            "zh": "竞赛"
+          }
+        },
+        {
+          "displayOrder": 2,
+          "label": {
+            "en": "Urban",
+            "ja": "都市",
+            "zh": "城市"
+          }
+        },
+        {
+          "displayOrder": 3,
+          "label": {
+            "en": "Public Space",
+            "ja": "公共空間",
+            "zh": "公共空间"
+          }
+        }
+      ],
+      "images": {
+        "cover": {
+          "imageOrder": 10,
+          "displayVariant": "cover",
+          "path": "assets/img/VC/Board.png",
+          "alt": {
+            "en": "Closer, not further.",
+            "ja": "Closer, not further.",
+            "zh": "Closer, not further."
+          },
+          "caption": {
+            "en": "Cover image",
+            "ja": "Cover image",
+            "zh": "Cover image"
+          },
+          "credit": "",
+          "notes": ""
+        },
+        "gallery": []
+      },
+      "translations": {
+        "en": {
+          "cardKicker": "SELECTED WORK",
+          "cardTitle": "Closer, not further.",
+          "cardDescription": "A competition proposal exploring how neighborhood life can be rebuilt through shared proximity, care, and everyday encounters.",
+          "detailTitle": "Closer, not further.",
+          "detailIntro": "A proposal for a former elementary school site in Meguro, rethinking civic space through shared programs and local relationships.",
+          "detailBody1": "The project imagines proximity as an architectural and social framework, where everyday activities can become a softer form of urban infrastructure.",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2025",
+          "metaStatus": "Competition",
+          "metaLocation": "Meguro, Tokyo, Japan",
+          "metaRole": "Concept, design, visualization, editorial narrative",
+          "ctaLabel": "Open project",
+          "translationStatus": "Draft",
+          "lastUpdated": "2026-05-17",
+          "notes": ""
+        },
+        "ja": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2025",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        },
+        "zh": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2025",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "if_eaves_dropped",
+      "slug": "if-eaves-dropped",
+      "sortOrder": 3,
+      "featured": false,
+      "category": "Academic",
+      "status": {
+        "en": "Academic",
+        "ja": "学術",
+        "zh": "学术"
+      },
+      "yearDisplay": "2019–2020",
+      "location": {
+        "en": "Oomori, Tokyo, Japan",
+        "ja": "東京・大森",
+        "zh": "日本东京大森"
+      },
+      "role": {
+        "en": "Thesis project, in collaboration with Mia Shucong Wang",
+        "ja": "卒業設計、Mia Shucong Wang との共同制作",
+        "zh": "毕业设计，与 Mia Shucong Wang 合作"
+      },
+      "collaboratingFirm": "Pratt Institute",
+      "sourceUrl": "https://irishen-design.github.io/portfolio-web/",
+      "notes": "",
+      "tags": [
+        {
+          "displayOrder": 1,
+          "label": {
+            "en": "Thesis",
+            "ja": "卒業設計",
+            "zh": "毕业设计"
+          }
+        },
+        {
+          "displayOrder": 2,
+          "label": {
+            "en": "Housing",
+            "ja": "住居",
+            "zh": "住宅"
+          }
+        },
+        {
+          "displayOrder": 3,
+          "label": {
+            "en": "Research",
+            "ja": "リサーチ",
+            "zh": "研究"
+          }
+        }
+      ],
+      "images": {
+        "cover": {
+          "imageOrder": 10,
+          "displayVariant": "cover",
+          "path": "assets/img/if eaves dropped/section.gif",
+          "alt": {
+            "en": "If Eaves Dropped cover",
+            "ja": "If Eaves Dropped cover",
+            "zh": "If Eaves Dropped cover"
+          },
+          "caption": {
+            "en": "Cover image",
+            "ja": "Cover image",
+            "zh": "Cover image"
+          },
+          "credit": "",
+          "notes": ""
+        },
+        "gallery": []
+      },
+      "translations": {
+        "en": {
+          "cardKicker": "ACADEMIC",
+          "cardTitle": "If Eaves Dropped: Rethinking Privacy NOW",
+          "cardDescription": "A thesis project exploring transient privacy through curvilinear spaces, partial enclosure, and shared domestic life.",
+          "detailTitle": "If Eaves Dropped: Rethinking Privacy NOW",
+          "detailIntro": "The project redefines privacy as something separated from ownership, formed through gradients of enclosure and moments of temporary retreat.",
+          "detailBody1": "Curvilinear spaces and columns create conditions that connect and separate without fully enclosing, allowing privacy to emerge as a shifting spatial experience.",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2019–2020",
+          "metaStatus": "Academic",
+          "metaLocation": "Oomori, Tokyo, Japan",
+          "metaRole": "Thesis project, in collaboration with Mia Shucong Wang",
+          "ctaLabel": "Open project",
+          "translationStatus": "Draft",
+          "lastUpdated": "2026-05-17",
+          "notes": ""
+        },
+        "ja": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2019–2020",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        },
+        "zh": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2019–2020",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "confusion_new_civic",
+      "slug": "confusion-and-the-new-civic",
+      "sortOrder": 4,
+      "featured": false,
+      "category": "Academic",
+      "status": {
+        "en": "Academic",
+        "ja": "学術",
+        "zh": "学术"
+      },
+      "yearDisplay": "2019",
+      "location": {
+        "en": "Shinjuku, Tokyo, Japan",
+        "ja": "東京・新宿",
+        "zh": "日本东京新宿"
+      },
+      "role": {
+        "en": "Design studio research project",
+        "ja": "設計スタジオ・リサーチプロジェクト",
+        "zh": "设计课题研究项目"
+      },
+      "collaboratingFirm": "Pratt Institute",
+      "sourceUrl": "https://irishen-design.github.io/portfolio-web/",
+      "notes": "",
+      "tags": [
+        {
+          "displayOrder": 1,
+          "label": {
+            "en": "Research",
+            "ja": "リサーチ",
+            "zh": "研究"
+          }
+        },
+        {
+          "displayOrder": 2,
+          "label": {
+            "en": "Infrastructure",
+            "ja": "インフラ",
+            "zh": "基础设施"
+          }
+        }
+      ],
+      "images": {
+        "cover": {
+          "imageOrder": 10,
+          "displayVariant": "cover",
+          "path": "assets/img/dirty realism/cover.jpg",
+          "alt": {
+            "en": "Confusion and the New Civic",
+            "ja": "Confusion and the New Civic",
+            "zh": "Confusion and the New Civic"
+          },
+          "caption": {
+            "en": "Cover image",
+            "ja": "Cover image",
+            "zh": "Cover image"
+          },
+          "credit": "",
+          "notes": ""
+        },
+        "gallery": []
+      },
+      "translations": {
+        "en": {
+          "cardKicker": "ACADEMIC",
+          "cardTitle": "Confusion and the New Civic",
+          "cardDescription": "A speculative addition to Shinjuku Station exploring line, infrastructure, and the relationship between humans and machines.",
+          "detailTitle": "Confusion and the New Civic",
+          "detailIntro": "Set within Shinjuku Station, the project investigates how exposed systems and infrastructural lines can produce a new civic experience.",
+          "detailBody1": "By foregrounding ducts, cords, circulation, and machine systems, the project turns everyday transit into an encounter with the hidden mechanics of the city.",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2019",
+          "metaStatus": "Academic",
+          "metaLocation": "Shinjuku, Tokyo, Japan",
+          "metaRole": "Design studio research project",
+          "ctaLabel": "Open project",
+          "translationStatus": "Draft",
+          "lastUpdated": "2026-05-17",
+          "notes": ""
+        },
+        "ja": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2019",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        },
+        "zh": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2019",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "zhangyuan_museum",
+      "slug": "zhangyuan-museum-of-art",
+      "sortOrder": 5,
+      "featured": false,
+      "category": "Professional",
+      "status": {
+        "en": "Schematic Design",
+        "ja": "基本設計",
+        "zh": "方案设计"
+      },
+      "yearDisplay": "2021–Present",
+      "location": {
+        "en": "Shanghai, China",
+        "ja": "中国・上海",
+        "zh": "中国上海"
+      },
+      "role": {
+        "en": "Concept massing, SD materials, consultant coordination",
+        "ja": "コンセプトマス検討、基本設計資料、コンサルタント調整",
+        "zh": "概念体量、方案材料、顾问协调"
+      },
+      "collaboratingFirm": "Kengo Kuma & Associates, Shanghai Office",
+      "sourceUrl": "https://irishen-design.github.io/portfolio-web/",
+      "notes": "",
+      "tags": [
+        {
+          "displayOrder": 1,
+          "label": {
+            "en": "Museum",
+            "ja": "美術館",
+            "zh": "美术馆"
+          }
+        },
+        {
+          "displayOrder": 2,
+          "label": {
+            "en": "Historic Context",
+            "ja": "歴史的文脈",
+            "zh": "历史文脉"
+          }
+        }
+      ],
+      "images": {
+        "cover": {
+          "imageOrder": 10,
+          "displayVariant": "cover",
+          "path": "assets/img/zhangyuan/cover.jpg",
+          "alt": {
+            "en": "Zhangyuan Museum of Art cover image",
+            "ja": "Zhangyuan Museum of Art cover image",
+            "zh": "Zhangyuan Museum of Art cover image"
+          },
+          "caption": {
+            "en": "Cover image",
+            "ja": "Cover image",
+            "zh": "Cover image"
+          },
+          "credit": "",
+          "notes": ""
+        },
+        "gallery": [
+          {
+            "imageOrder": 20,
+            "displayVariant": "hero",
+            "path": "assets/img/zhangyuan/cover.jpg",
+            "alt": {
+              "en": "Bird's Eye View of Zhangyuan",
+              "ja": "張園鳥瞰ビュー",
+              "zh": "张园鸟瞰图"
+            },
+            "caption": {
+              "en": "Bird's Eye View of Zhangyuan",
+              "ja": "張園鳥瞰ビュー",
+              "zh": "张园鸟瞰图"
+            },
+            "credit": "",
+            "notes": "Zhangyuan pilot opener"
+          },
+          {
+            "imageOrder": 30,
+            "displayVariant": "diagram",
+            "path": "assets/img/zhangyuan/zhangyuan-ecosystem-diagram.svg",
+            "alt": {
+              "en": "Ecosystem Diagram",
+              "ja": "エコシステム図",
+              "zh": "生态系统图"
+            },
+            "caption": {
+              "en": "Ecosystem Diagram",
+              "ja": "エコシステム図",
+              "zh": "生态系统图"
+            },
+            "credit": "",
+            "notes": "Zhangyuan ecosystem diagram"
+          },
+          {
+            "imageOrder": 40,
+            "displayVariant": "wide",
+            "path": "assets/img/zhangyuan/model.png",
+            "alt": {
+              "en": "Physical Model",
+              "ja": "模型写真",
+              "zh": "实体模型照片"
+            },
+            "caption": {
+              "en": "Physical Model",
+              "ja": "模型写真",
+              "zh": "实体模型照片"
+            },
+            "credit": "",
+            "notes": "Zhangyuan pilot media"
+          },
+          {
+            "imageOrder": 50,
+            "displayVariant": "full",
+            "path": "assets/img/zhangyuan/south1.jpg",
+            "alt": {
+              "en": "South Facade",
+              "ja": "南側ビュー",
+              "zh": "南立面视角"
+            },
+            "caption": {
+              "en": "South Facade",
+              "ja": "南側ビュー",
+              "zh": "南立面视角"
+            },
+            "credit": "",
+            "notes": "Zhangyuan pilot media"
+          },
+          {
+            "imageOrder": 60,
+            "displayVariant": "wide",
+            "path": "assets/img/zhangyuan/interior-1.png",
+            "alt": {
+              "en": "Interior View",
+              "ja": "インテリアビュー",
+              "zh": "室内大台阶视角"
+            },
+            "caption": {
+              "en": "Interior View",
+              "ja": "インテリアビュー",
+              "zh": "室内大台阶视角"
+            },
+            "credit": "",
+            "notes": "Zhangyuan pilot media"
+          },
+          {
+            "imageOrder": 70,
+            "displayVariant": "wide",
+            "path": "assets/img/zhangyuan/211108 plaza 2-2.png",
+            "alt": {
+              "en": "Sunken plaza view",
+              "ja": "サンクンプラザのビュー",
+              "zh": "下沉广场视图"
+            },
+            "caption": {
+              "en": "Sunken plaza view",
+              "ja": "サンクンプラザのビュー",
+              "zh": "下沉广场视图"
+            },
+            "credit": "",
+            "notes": "Zhangyuan pilot media"
+          },
+          {
+            "imageOrder": 80,
+            "displayVariant": "narrow",
+            "path": "assets/img/zhangyuan/zy sketch-1.jpg",
+            "alt": {
+              "en": "Concept Sketch 1",
+              "ja": "コンセプトスケッチ 1",
+              "zh": "概念草图 1"
+            },
+            "caption": {
+              "en": "Concept Sketch 1",
+              "ja": "コンセプトスケッチ 1",
+              "zh": "概念草图 1"
+            },
+            "credit": "",
+            "notes": "Zhangyuan pilot media"
+          }
+        ]
+      },
+      "translations": {
+        "en": {
+          "cardKicker": "SELECTED WORK",
+          "cardTitle": "Zhangyuan Museum of Art",
+          "cardDescription": "A terraced museum in a historic longtang neighborhood, framing the tension between old fabric and new cultural life.",
+          "detailTitle": "Zhangyuan Museum of Art",
+          "detailIntro": "Located at the center of a renovated historic neighborhood, the museum acts as a node linking old and new, history and culture.",
+          "detailBody1": "The terraced form offers changing views of Zhangyuan, while the sunken entrance connects the museum to underground transit, commercial programs, and public space.",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2021–Present",
+          "metaStatus": "Schematic Design",
+          "metaLocation": "Shanghai, China",
+          "metaRole": "Concept massing, SD materials, consultant coordination",
+          "ctaLabel": "Open project",
+          "translationStatus": "Draft",
+          "lastUpdated": "2026-05-17",
+          "notes": ""
+        },
+        "ja": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2021–Present",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        },
+        "zh": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2021–Present",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "birkenstock_harajuku",
+      "slug": "birkenstock-harajuku-concept-store",
+      "sortOrder": 6,
+      "featured": false,
+      "category": "Professional",
+      "status": {
+        "en": "Concept / Schematic Design",
+        "ja": "コンセプト・基本設計",
+        "zh": "概念 / 方案设计"
+      },
+      "yearDisplay": "2022–2023",
+      "location": {
+        "en": "Harajuku, Tokyo, Japan",
+        "ja": "東京・原宿",
+        "zh": "日本东京原宿"
+      },
+      "role": {
+        "en": "Concept design, schematic design, visualization",
+        "ja": "コンセプト設計、基本設計、ビジュアライゼーション",
+        "zh": "概念设计、方案设计、可视化"
+      },
+      "collaboratingFirm": "TORAFU Architects",
+      "sourceUrl": "https://irishen-design.github.io/portfolio-web/",
+      "notes": "Current site lists Birkenstock; previous sheet had Clarks, check final naming",
+      "tags": [
+        {
+          "displayOrder": 1,
+          "label": {
+            "en": "Retail",
+            "ja": "店舗",
+            "zh": "商业空间"
+          }
+        },
+        {
+          "displayOrder": 2,
+          "label": {
+            "en": "Interior",
+            "ja": "インテリア",
+            "zh": "室内"
+          }
+        }
+      ],
+      "images": {
+        "cover": {
+          "imageOrder": 10,
+          "displayVariant": "cover",
+          "path": "assets/img/birkenstock/cover2.png",
+          "alt": {
+            "en": "Birkenstock Harajuku Concept Store",
+            "ja": "Birkenstock Harajuku Concept Store",
+            "zh": "Birkenstock Harajuku Concept Store"
+          },
+          "caption": {
+            "en": "Cover image",
+            "ja": "Cover image",
+            "zh": "Cover image"
+          },
+          "credit": "",
+          "notes": ""
+        },
+        "gallery": []
+      },
+      "translations": {
+        "en": {
+          "cardKicker": "SELECTED WORK",
+          "cardTitle": "Birkenstock Harajuku Concept Store",
+          "cardDescription": "A retail concept shaped around brand atmosphere, threshold, and the choreography of entering from the street.",
+          "detailTitle": "Birkenstock Harajuku Concept Store",
+          "detailIntro": "A concept store proposal exploring how a compact retail space can create a stronger sense of arrival and brand immersion.",
+          "detailBody1": "The design works through thresholds, material atmosphere, and visual control to distinguish the store from its surrounding commercial environment.",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2022–2023",
+          "metaStatus": "Concept / Schematic Design",
+          "metaLocation": "Harajuku, Tokyo, Japan",
+          "metaRole": "Concept design, schematic design, visualization",
+          "ctaLabel": "Open project",
+          "translationStatus": "Draft",
+          "lastUpdated": "2026-05-17",
+          "notes": ""
+        },
+        "ja": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2022–2023",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        },
+        "zh": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2022–2023",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "porosity_tama",
+      "slug": "porosity-tama-art-university-library",
+      "sortOrder": 7,
+      "featured": false,
+      "category": "Academic",
+      "status": {
+        "en": "Academic",
+        "ja": "学術",
+        "zh": "学术"
+      },
+      "yearDisplay": "2019",
+      "location": {
+        "en": "Hachioji, Japan",
+        "ja": "日本・八王子",
+        "zh": "日本八王子"
+      },
+      "role": {
+        "en": "Architectural analysis and representation research",
+        "ja": "建築分析、表現研究",
+        "zh": "建筑分析与表现研究"
+      },
+      "collaboratingFirm": "Pratt Institute",
+      "sourceUrl": "https://irishen-design.github.io/portfolio-web/",
+      "notes": "",
+      "tags": [
+        {
+          "displayOrder": 1,
+          "label": {
+            "en": "Analysis",
+            "ja": "分析",
+            "zh": "分析"
+          }
+        },
+        {
+          "displayOrder": 2,
+          "label": {
+            "en": "Research",
+            "ja": "リサーチ",
+            "zh": "研究"
+          }
+        }
+      ],
+      "images": {
+        "cover": {
+          "imageOrder": 10,
+          "displayVariant": "cover",
+          "path": "assets/img/tama/Tama_worm_s.jpg",
+          "alt": {
+            "en": "Porosity: Tama Art University Library Analysis",
+            "ja": "Porosity: Tama Art University Library Analysis",
+            "zh": "Porosity: Tama Art University Library Analysis"
+          },
+          "caption": {
+            "en": "Cover image",
+            "ja": "Cover image",
+            "zh": "Cover image"
+          },
+          "credit": "",
+          "notes": ""
+        },
+        "gallery": []
+      },
+      "translations": {
+        "en": {
+          "cardKicker": "ACADEMIC",
+          "cardTitle": "Porosity: Tama Art University Library Analysis",
+          "cardDescription": "An architectural analysis of porosity through arches, apertures, view cones, and layered modes of representation.",
+          "detailTitle": "Porosity: Tama Art University Library Analysis",
+          "detailIntro": "This research project studies Toyo Ito’s Tama Art University Library through the idea of porosity.",
+          "detailBody1": "The analysis moves from geometric arches to framed viewpoints and material representation, drawing from architectural drawings and animation techniques.",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2019",
+          "metaStatus": "Academic",
+          "metaLocation": "Hachioji, Japan",
+          "metaRole": "Architectural analysis and representation research",
+          "ctaLabel": "Open project",
+          "translationStatus": "Draft",
+          "lastUpdated": "2026-05-17",
+          "notes": ""
+        },
+        "ja": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2019",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        },
+        "zh": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2019",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "wuxi_concert_hall",
+      "slug": "wuxi-concert-hall-commercial-complex",
+      "sortOrder": 8,
+      "featured": false,
+      "category": "Professional / Competition",
+      "status": {
+        "en": "Competition",
+        "ja": "コンペ",
+        "zh": "竞赛"
+      },
+      "yearDisplay": "2022",
+      "location": {
+        "en": "Wuxi, Jiangsu, China",
+        "ja": "中国・江蘇省無錫",
+        "zh": "中国江苏无锡"
+      },
+      "role": {
+        "en": "Urban planning concept, concert hall design, visualization",
+        "ja": "都市計画コンセプト、コンサートホール設計、ビジュアライゼーション",
+        "zh": "城市规划概念、音乐厅设计、可视化"
+      },
+      "collaboratingFirm": "Kengo Kuma & Associates, Shanghai Office",
+      "sourceUrl": "https://irishen-design.github.io/portfolio-web/",
+      "notes": "Location on site currently placeholder; replace City, Country",
+      "tags": [
+        {
+          "displayOrder": 1,
+          "label": {
+            "en": "Concert Hall",
+            "ja": "コンサートホール",
+            "zh": "音乐厅"
+          }
+        },
+        {
+          "displayOrder": 2,
+          "label": {
+            "en": "Competition",
+            "ja": "コンペ",
+            "zh": "竞赛"
+          }
+        },
+        {
+          "displayOrder": 3,
+          "label": {
+            "en": "Urban",
+            "ja": "都市",
+            "zh": "城市"
+          }
+        }
+      ],
+      "images": {
+        "cover": {
+          "imageOrder": 10,
+          "displayVariant": "cover",
+          "path": "assets/img/wuxi/cover.jpg",
+          "alt": {
+            "en": "Wuxi Concert Hall and Commercial Complex",
+            "ja": "Wuxi Concert Hall and Commercial Complex",
+            "zh": "Wuxi Concert Hall and Commercial Complex"
+          },
+          "caption": {
+            "en": "Cover image",
+            "ja": "Cover image",
+            "zh": "Cover image"
+          },
+          "credit": "",
+          "notes": ""
+        },
+        "gallery": []
+      },
+      "translations": {
+        "en": {
+          "cardKicker": "COMPETITION",
+          "cardTitle": "Wuxi Concert Hall and Commercial Complex",
+          "cardDescription": "A cultural complex where concert hall, museum, commerce, and landscape form a network of public event spaces.",
+          "detailTitle": "Wuxi Concert Hall and Commercial Complex",
+          "detailIntro": "Inspired by the vineyard typology, the project treats the site itself as an extended concert hall for music and public life.",
+          "detailBody1": "Semi-circular forms become eaves, terraces, staircases, and plazas, creating a connected landscape for cultural events, exhibitions, and everyday gathering.",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2022",
+          "metaStatus": "Competition",
+          "metaLocation": "Wuxi, Jiangsu, China",
+          "metaRole": "Urban planning concept, concert hall design, visualization",
+          "ctaLabel": "Open project",
+          "translationStatus": "Draft",
+          "lastUpdated": "2026-05-17",
+          "notes": ""
+        },
+        "ja": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2022",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        },
+        "zh": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2022",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "id": "fluid_yet_defined",
+      "slug": "fluid-yet-defined-columbia-boathouse",
+      "sortOrder": 9,
+      "featured": false,
+      "category": "Academic",
+      "status": {
+        "en": "Academic",
+        "ja": "学術",
+        "zh": "学术"
+      },
+      "yearDisplay": "2018",
+      "location": {
+        "en": "Inwood, New York, USA",
+        "ja": "米国・ニューヨーク・インウッド",
+        "zh": "美国纽约 Inwood"
+      },
+      "role": {
+        "en": "Design studio project, in collaboration with Jingfei Huang",
+        "ja": "設計スタジオ課題、Jingfei Huang との共同制作",
+        "zh": "设计课题，与 Jingfei Huang 合作"
+      },
+      "collaboratingFirm": "Pratt Institute",
+      "sourceUrl": "https://irishen-design.github.io/portfolio-web/",
+      "notes": "",
+      "tags": [
+        {
+          "displayOrder": 1,
+          "label": {
+            "en": "Academic",
+            "ja": "学術",
+            "zh": "学术"
+          }
+        },
+        {
+          "displayOrder": 2,
+          "label": {
+            "en": "Boathouse",
+            "ja": "ボートハウス",
+            "zh": "船屋"
+          }
+        }
+      ],
+      "images": {
+        "cover": {
+          "imageOrder": 10,
+          "displayVariant": "cover",
+          "path": "assets/img/boathouse/cover.jpg",
+          "alt": {
+            "en": "Fluid yet Defined boathouse proposal",
+            "ja": "Fluid yet Defined boathouse proposal",
+            "zh": "Fluid yet Defined boathouse proposal"
+          },
+          "caption": {
+            "en": "Cover image",
+            "ja": "Cover image",
+            "zh": "Cover image"
+          },
+          "credit": "",
+          "notes": ""
+        },
+        "gallery": []
+      },
+      "translations": {
+        "en": {
+          "cardKicker": "ACADEMIC",
+          "cardTitle": "Fluid yet Defined: Columbia University Baker Athletic Complex",
+          "cardDescription": "A boathouse proposal using arches to organize movement, visibility, and shared athletic life along the water.",
+          "detailTitle": "Fluid yet Defined: Columbia University Baker Athletic Complex",
+          "detailIntro": "The project explores fluidity and definition through a structural system of connected arches.",
+          "detailBody1": "Different circulation paths for athletes, students, and visitors are organized through porous spatial boundaries, encouraging interaction while maintaining clarity.",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2018",
+          "metaStatus": "Academic",
+          "metaLocation": "Inwood, New York, USA",
+          "metaRole": "Design studio project, in collaboration with Jingfei Huang",
+          "ctaLabel": "Open project",
+          "translationStatus": "Draft",
+          "lastUpdated": "2026-05-17",
+          "notes": ""
+        },
+        "ja": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2018",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        },
+        "zh": {
+          "cardKicker": "",
+          "cardTitle": "",
+          "cardDescription": "",
+          "detailTitle": "",
+          "detailIntro": "",
+          "detailBody1": "",
+          "detailBody2": "",
+          "detailBody3": "",
+          "metaYear": "2018",
+          "metaStatus": "",
+          "metaLocation": "",
+          "metaRole": "",
+          "ctaLabel": "Open project",
+          "translationStatus": "To translate",
+          "lastUpdated": "",
+          "notes": ""
+        }
+      }
+    }
+  ]
+};

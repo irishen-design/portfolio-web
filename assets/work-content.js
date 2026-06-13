@@ -1,271 +1,259 @@
 (function () {
-  const WORK_EN = {
-    overlay: {
-      work: {
-        kicker: "Portfolio",
-        title: "Selected Works",
-        text: "Architecture, interiors, visualization, and design research.",
-      },
-      about: {
-        kicker: "Background",
-        title: "About ME",
-        text: "Thoughts, experiences, and interests shaping my approach to space and design.",
-      },
-      contact: {
-        kicker: "Direct",
-        title: "Contact",
-        text: "For projects, collaborations, or simply exchanging ideas.",
-      },
-    },
-    hero: {
-      kicker: "Selected Work",
-      title: "UCCA Clay Museum",
-      meta: "2020–2024 · Yixing, China",
-      brief:
-        "Inspired by the local “dragon kiln,” the museum reinterprets Yixing’s clay culture through form, materiality, and public space.",
-      cta: "Open project",
-      imageAlt: "UCCA Clay Museum",
-    },
-    features: {
-      zhangyuan: {
-        kicker: "Selected Work",
-        title: "Zhangyuan Museum of Art",
-        meta: "2021–Present · Shanghai, China",
-        brief:
-          "Terraced massing frames layered views through a historic longtang, with a below-grade arrival sequence linking hotel, retail, and museum spaces.",
-        cta: "Open project",
-        imageAlt: "Zhangyuan Museum cover",
-      },
-    },
-    projects: {
-      zisha: {
-        title: "UCCA Clay Museum",
-        year: "2020–2024",
-        location: "Yixing, China",
-        role: "SD → DD → Construction Supervision",
-        experience: "Kengo Kuma and Associates, Shanghai",
-        brief:
-          "Public museum inspired by the local dragon kiln form; ceramic facade developed with local makers.",
-        imageAlt: "UCCA Clay Museum",
-      },
-      birkenstock: {
-        title: "Birkenstock Harajuku Concept Store",
-        year: "2022-2023",
-        location: "Harajuku, Tokyo, Japan",
-        role: "Visualization",
-        experience: "",
-        brief: "Photo-realistic renderings to push the design process further.",
-        imageAlt: "Entrance Render",
-      },
-      thesis: {
-        title: "If Eaves Dropped: Rethinking Privacy NOW",
-        cardTitle: "If Eaves Dropped:",
-        cardTitleSecondary: "Rethinking Privacy NOW",
-        year: "2019-2020",
-        location: "Oomori, Tokyo, Japan",
-        role: "Thesis Project (Honorable Mention)",
-        experience: "Pratt Institute",
-        brief:
-          "Our project provokes a new sense of privacy: transient privacy, in other words, privacy without ownership.",
-        imageAlt: "Animated Sections",
-      },
-      zhangyuan: {
-        title: "Zhangyuan Museum of Art",
-        year: "2021–Present",
-        location: "Shanghai, China",
-        role: "Concept Design → Schematic Design",
-        experience: "Kengo Kuma and Associates, Shanghai",
-        brief:
-          "Terraced massing frames layered views through a historic longtang; B1 entry links hotel and retail via sunken plaza.",
-        imageAlt: "Zhangyuan Museum cover",
-      },
-      dirtyrealism: {
-        title: "Confusion and the New Civic",
-        year: "2019",
-        location: "Shinjuku, Tokyo, Japan",
-        role: "Concept Design",
-        experience: "",
-        brief:
-          "Mall concept that introduces a solid volume to create curiosity and a distinct brand atmosphere.",
-        imageAlt: "DR cover",
-      },
-      tama: {
-        title: "Porosity: Tama Art University Library Analysis",
-        year: "2019",
-        location: "Hachioji, Japan",
-        role: "Analysis",
-        experience: "",
-        brief:
-          "Explores the idea of porosity through Toyo Ito's Tama Art University Library. Graphic style influenced by Akira and Ghost in the Shell.",
-        imageAlt: "Worm's Eye View",
-      },
-      vc: {
-        title: "Closer, not further.",
-        year: "2025",
-        location: "Meguro, Tokyo, Japan",
-        role: "Concept Design",
-        experience: "Personal",
-        brief:
-          "Architectural thesis exploring transient privacy through curvilinear spaces, partial enclosures, and new forms of closeness.",
-        imageAlt: "Closer, not further.",
-      },
-      wuxi: {
-        title: "Wuxi Concert Hall and Commercial Complex",
-        year: "2022",
-        location: "Wuxi, Jiangsu, China",
-        role: "Concept Design",
-        experience: "",
-        brief:
-          "The site itself acts as a large concert hall where people can enjoy music events and other cultural activities regardless of being inside or outside.",
-        imageAlt: "Main Concept",
-      },
-      boathouse: {
-        title: "Fluid yet Defined: Columbia University Baker Athletic Complex",
-        year: "2018",
-        location: "Inwood, New York, USA",
-        role: "Concept",
-        experience: "",
-        brief:
-          "Taking the idea of fluidity, the key to rowing, we began to study arches as the primary structural scheme for the project.",
-        imageAlt: "Model Shot",
-      },
-    },
-  };
+  const DEFAULT_LANG = "en";
+  const CONTENT_URL = "assets/content.json";
+  const CONTENT_FALLBACK_URL = "assets/content.generated.js";
+  const LANGS = ["en", "ja", "zh"];
 
-  // Edit work-page/project wording here. Generic UI terms still live in assets/i18n.js.
-  const ABOUT_EN = {
-    summary:
-      "Architectural designer currently based in Tokyo, working across architecture, interiors, visualization, and emerging design technologies. Drawn to projects that connect culture, memory, and public life, while constantly exploring how digital tools can reshape the way spaces are imagined and produced.",
-    born: {
-      year: "1996",
-      label: "Born in Shanghai, China",
-    },
-    present: {
-      year: "Present",
-    },
-    future: {
-      note: "Where to NEXT?",
-    },
-    timeline: {
-      pratt_start: {
-        year: "2015",
-        title: "",
-      },
-      pratt_end: {
-        year: "2020",
-        title: "Pratt Institute, Bachelor of Architecture",
-        location: "New York City",
-      },
-      kengo_end: {
-        year: "2022",
-        title: "Kengo Kuma and Associates",
-        location: "Shanghai",
-      },
-      makethouse: {
-        year: "2024",
-        title: "MakeHouse",
-        location: "Tokyo",
-      },
-      tange_start: {
-        year: "2024",
-        title: "Tange Associates",
-        location: "Tokyo",
-      },
-    },
-  };
+  function splitTitle(title) {
+    if (!title || typeof title !== "string") return {};
+    const match = title.match(/^([^:]+:)\s+(.+)$/);
+    if (!match) return {};
+    return {
+      cardTitle: match[1],
+      cardTitleSecondary: match[2],
+    };
+  }
 
-  const ABOUT_JA = {
-    summary:
-      "東京を拠点に、公共建築や商業複合施設の設計、ビジュアライゼーション、そして新たなデザインテクノロジーの領域を横断して活動する建築デザイナー。文化、記憶、公共空間の関係性に関心を持ちながら、テクノロジーを通して空間と人との関係をどのように再構築できるかを探求している。",
-    born: {
-      year: "1996",
-      label: "Born in Shanghai, China",
-    },
-    present: {
-      year: "Present",
-    },
-    future: {
-      note: "Where to NEXT?",
-    },
-    timeline: {
-      pratt_start: {
-        year: "2015",
-        title: "",
-      },
-      pratt_end: {
-        year: "2020",
-        title: "Pratt Institute, Bachelor of Architecture",
-        location: "New York City",
-      },
-      kengo_end: {
-        year: "2022",
-        title: "Kengo Kuma and Associates",
-        location: "Shanghai",
-      },
-      makethouse: {
-        year: "2024",
-        title: "MakeHouse",
-        location: "Tokyo",
-      },
-      tange_start: {
-        year: "2024",
-        title: "Tange Associates",
-        location: "Tokyo",
-      },
-    },
-  };
+  function getLangValue(value, lang) {
+    if (typeof value === "string") return value;
+    if (!value || typeof value !== "object") return "";
+    return value[lang] || value[DEFAULT_LANG] || "";
+  }
 
-  const ABOUT_ZH = {
-    summary:
-      "现居东京的建筑设计师，工作涵盖公共建筑、商业综合体、可视化以及新兴设计科技领域。对于文化、记忆与公共空间之间的联系，同时乐于探索如何运用科技重新塑造空间与人的关系。",
-    born: {
-      year: "1996",
-      label: "Born in Shanghai, China",
-    },
-    present: {
-      year: "Present",
-    },
-    future: {
-      note: "Where to NEXT?",
-    },
-    timeline: {
-      pratt_start: {
-        year: "2015",
-        title: "",
-      },
-      pratt_end: {
-        year: "2020",
-        title: "Pratt Institute, Bachelor of Architecture",
-        location: "New York City",
-      },
-      kengo_end: {
-        year: "2022",
-        title: "Kengo Kuma and Associates",
-        location: "Shanghai",
-      },
-      makethouse: {
-        year: "2024",
-        title: "MakeHouse",
-        location: "Tokyo",
-      },
-      tange_start: {
-        year: "2024",
-        title: "Tange Associates",
-        location: "Tokyo",
-      },
-    },
-  };
+  function getCopy(raw, section, key, lang) {
+    const value =
+      raw &&
+      raw.site &&
+      raw.site.copy &&
+      raw.site.copy[section] &&
+      raw.site.copy[section][key];
+    return getLangValue(value, lang);
+  }
 
-  window.SiteContent = {
-    work: {
-      en: WORK_EN,
-      ja: JSON.parse(JSON.stringify(WORK_EN)),
-      zh: JSON.parse(JSON.stringify(WORK_EN)),
-    },
-    about: {
-      en: ABOUT_EN,
-      ja: ABOUT_JA,
-      zh: ABOUT_ZH,
-    },
-  };
+  function projectMeta(project, field, lang) {
+    return getLangValue(project && project[field], lang);
+  }
+
+  function projectTranslation(project, lang) {
+    const translations = (project && project.translations) || {};
+    const base = translations[DEFAULT_LANG] || {};
+    const selected = translations[lang] || {};
+    const merged = {};
+    const keys = new Set([...Object.keys(base), ...Object.keys(selected)]);
+    keys.forEach((key) => {
+      merged[key] = selected[key] || base[key] || "";
+    });
+    return merged;
+  }
+
+  function projectImageAlt(project, lang) {
+    const cover = project && project.images && project.images.cover;
+    const alt = cover && cover.alt;
+    return getLangValue(alt, lang) || "";
+  }
+
+  function buildUiDictionary(raw, lang) {
+    const footer = getCopy(raw, "footer", "copyright", lang) || "© {year} Iris Shen";
+    return {
+      brand: getCopy(raw, "global", "brand", lang) || getCopy(raw, "global", "site_title", lang),
+      lang_label: getCopy(raw, "global", "lang_label", lang) || "Language",
+      footer_copyright: footer.includes("{year}") ? footer : `${footer} {year}`,
+      modal_year: getCopy(raw, "project", "year", lang) || "Year",
+      modal_location: getCopy(raw, "project", "location", lang) || "Location",
+      modal_role: getCopy(raw, "project", "role", lang) || "Role",
+      modal_experience: getCopy(raw, "project", "experience", lang) || "Experience",
+      modal_close: getCopy(raw, "project", "close", lang) || "Close",
+      landing_kicker: getCopy(raw, "overlay", "index_kicker", lang) || "Index",
+      landing_heading: getCopy(raw, "overlay", "index_heading", lang) || "Spatial practices.",
+      landing_work: getCopy(raw, "nav", "work", lang) || "Selected Works",
+      landing_about: getCopy(raw, "nav", "about", lang) || "About ME",
+      about_title: getCopy(raw, "about", "title", lang) || "About ME",
+      contact: getCopy(raw, "nav", "contact", lang) || "Get in touch",
+    };
+  }
+
+  function buildProjectRuntime(project, lang) {
+    const translation = projectTranslation(project, lang);
+    const title = translation.cardTitle || translation.detailTitle || project.id;
+    const split = splitTitle(title);
+    return {
+      title,
+      cardTitle: split.cardTitle,
+      cardTitleSecondary: split.cardTitleSecondary,
+      year: translation.metaYear || project.yearDisplay || "",
+      location: translation.metaLocation || projectMeta(project, "location", lang),
+      role: translation.metaRole || projectMeta(project, "role", lang),
+      experience: project.collaboratingFirm || "",
+      brief: translation.detailIntro || translation.cardDescription || "",
+      imageAlt: projectImageAlt(project, lang),
+      coverImage: project.images && project.images.cover ? project.images.cover.path : "",
+    };
+  }
+
+  function buildRuntimeContent(raw) {
+    const projects = Array.isArray(raw && raw.projects) ? raw.projects : [];
+    const projectMap = Object.fromEntries(projects.map((project) => [project.id, project]));
+    const featuredProject =
+      projects.find((project) => project.featured) || projectMap["zisha_museum"] || projects[0];
+    const zhangyuanProject = projectMap["zhangyuan_museum"];
+    const aboutRaw = (raw && raw.site && raw.site.about) || {};
+    const contactItems =
+      raw && raw.site && raw.site.contact && Array.isArray(raw.site.contact.items)
+        ? raw.site.contact.items
+        : [];
+
+    const runtime = {
+      raw,
+      site: {
+        ui: {},
+        contact: { items: contactItems },
+      },
+      work: {},
+      about: {},
+    };
+
+    LANGS.forEach((lang) => {
+      const ui = buildUiDictionary(raw, lang);
+      runtime.site.ui[lang] = ui;
+
+      const overlay = {
+        work: {
+          kicker: getCopy(raw, "overlay", "work_kicker", lang),
+          title: getCopy(raw, "overlay", "work_title", lang),
+          text: getCopy(raw, "overlay", "work_text", lang),
+        },
+        about: {
+          kicker: getCopy(raw, "overlay", "about_kicker", lang),
+          title: getCopy(raw, "overlay", "about_title", lang),
+          text: getCopy(raw, "overlay", "about_text", lang),
+        },
+        contact: {
+          kicker: getCopy(raw, "overlay", "contact_kicker", lang),
+          title: getCopy(raw, "overlay", "contact_title", lang),
+          text: getCopy(raw, "overlay", "contact_text", lang),
+        },
+      };
+
+      const featuredTranslation = projectTranslation(featuredProject, lang);
+      const zhangyuanTranslation = projectTranslation(zhangyuanProject, lang);
+
+      runtime.work[lang] = {
+        overlay,
+        hero: {
+          kicker: featuredTranslation.cardKicker || "Selected Work",
+          title:
+            featuredTranslation.detailTitle ||
+            featuredTranslation.cardTitle ||
+            featuredProject.id,
+          meta: `${featuredTranslation.metaYear || featuredProject.yearDisplay || ""} · ${
+            featuredTranslation.metaLocation ||
+            projectMeta(featuredProject, "location", lang)
+          }`,
+          brief:
+            featuredTranslation.detailIntro ||
+            featuredTranslation.cardDescription ||
+            "",
+          cta:
+            featuredTranslation.ctaLabel ||
+            getCopy(raw, "project", "open_project", lang) ||
+            "Open project",
+          imageAlt: projectImageAlt(featuredProject, lang),
+        },
+        features: {
+          zhangyuan: zhangyuanProject
+            ? {
+                kicker: zhangyuanTranslation.cardKicker || "Selected Work",
+                title:
+                  zhangyuanTranslation.detailTitle ||
+                  zhangyuanTranslation.cardTitle ||
+                  zhangyuanProject.id,
+                meta: `${
+                  zhangyuanTranslation.metaYear || zhangyuanProject.yearDisplay || ""
+                } · ${
+                  zhangyuanTranslation.metaLocation ||
+                  projectMeta(zhangyuanProject, "location", lang)
+                }`,
+                brief:
+                  zhangyuanTranslation.cardDescription ||
+                  zhangyuanTranslation.detailIntro ||
+                  "",
+                cta:
+                  zhangyuanTranslation.ctaLabel ||
+                  getCopy(raw, "project", "open_project", lang) ||
+                  "Open project",
+                imageAlt: projectImageAlt(zhangyuanProject, lang),
+              }
+            : null,
+        },
+        projects: Object.fromEntries(
+          projects.map((project) => [project.id, buildProjectRuntime(project, lang)])
+        ),
+      };
+
+      const timelineEntries = Array.isArray(aboutRaw.timeline) ? aboutRaw.timeline : [];
+      runtime.about[lang] = {
+        summary: getLangValue(aboutRaw.summary, lang),
+        born: {
+          year: getLangValue(aboutRaw.born && aboutRaw.born.year, lang),
+          label: getLangValue(aboutRaw.born && aboutRaw.born.label, lang),
+        },
+        present: {
+          year: getLangValue(aboutRaw.present && aboutRaw.present.year, lang),
+        },
+        future: {
+          note: getLangValue(aboutRaw.future && aboutRaw.future.note, lang),
+        },
+        timeline: Object.fromEntries(
+          timelineEntries.map((entry) => [
+            entry.id,
+            {
+              year: entry.year || "",
+              title: getLangValue(entry.title, lang),
+              location: getLangValue(entry.location, lang),
+            },
+          ])
+        ),
+      };
+    });
+
+    return runtime;
+  }
+
+  function applyRuntimeContent(raw) {
+    window.SiteContentRaw = raw;
+    window.SiteContent = buildRuntimeContent(raw);
+    return window.SiteContent;
+  }
+
+  async function loadScriptFallback() {
+    await new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = CONTENT_FALLBACK_URL;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+    if (!window.__SITE_CONTENT_JSON__) {
+      throw new Error("Fallback content script loaded but no content payload was found.");
+    }
+    return window.__SITE_CONTENT_JSON__;
+  }
+
+  async function loadContent() {
+    try {
+      const response = await fetch(CONTENT_URL, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Failed to load content.json (${response.status})`);
+      }
+      return await response.json();
+    } catch (error) {
+      return await loadScriptFallback().catch((fallbackError) => {
+        console.warn("Content JSON load failed.", error);
+        console.warn("Fallback content script load failed.", fallbackError);
+        throw fallbackError;
+      });
+    }
+  }
+
+  window.SiteContentReady = loadContent().then(applyRuntimeContent);
 })();

@@ -20,26 +20,51 @@ Live site:
   Overlay behavior, language switching hooks, work-page rendering, modal/gallery behavior, and light interaction logic.
 
 - [assets/i18n.js](/Users/irisiri/portfolio-web/assets/i18n.js)
-  Generic UI strings only, such as navigation labels and shared interface text.
+  Language state and UI translation application. Reads generic UI strings from exported content.
 
 - [assets/work-content.js](/Users/irisiri/portfolio-web/assets/work-content.js)
-  Editable page content for work and about sections across English, Japanese, and Chinese.
+  Content loader. Reads exported content JSON and builds the runtime content structure used by the site.
+
+- [assets/content.json](/Users/irisiri/portfolio-web/assets/content.json)
+  Generated content file used by the website.
+
+- [scripts/export_content.py](/Users/irisiri/portfolio-web/scripts/export_content.py)
+  Spreadsheet export script. Converts the master workbook into JSON for the site.
 
 ## Editing Content
 
-Use [assets/work-content.js](/Users/irisiri/portfolio-web/assets/work-content.js) for:
-- home/work page hero text
-- project card text
-- feature project text
-- about page intro
-- about page timeline text
+All website copy is managed from:
+- [portfolio_content_master.xlsx](/Users/irisiri/portfolio-web/portfolio_content_master.xlsx)
 
-Use [assets/i18n.js](/Users/irisiri/portfolio-web/assets/i18n.js) for:
-- `Selected Works`
-- `About ME`
-- `Get in touch`
-- overlay heading / generic labels
-- shared UI terms
+Main sheets:
+- `Site_Copy`
+- `Projects`
+- `Project_Texts`
+- `Project_Images`
+- `About_Content`
+- `About_Timeline`
+- `Contact`
+
+For `Project_Images`, the key structural fields are:
+- `image_role`
+- `image_order`
+- `display_variant`
+- `image_path`
+
+Workflow:
+1. Edit [portfolio_content_master.xlsx](/Users/irisiri/portfolio-web/portfolio_content_master.xlsx)
+2. Run:
+
+```bash
+/Users/irisiri/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/export_content.py
+```
+
+3. This regenerates:
+   - [assets/content.json](/Users/irisiri/portfolio-web/assets/content.json)
+   - [assets/content.generated.js](/Users/irisiri/portfolio-web/assets/content.generated.js)
+4. Reload the site
+
+The site should not require component edits for copy changes.
 
 ## Languages
 
@@ -52,6 +77,8 @@ English is the default language.
 
 Language preference is saved in local storage with the current key:
 - `site:lang:v2`
+
+The language switcher reads the selected language from exported content and applies the matching translation automatically.
 
 ## Styling Notes
 
@@ -80,6 +107,10 @@ Open locally:
 Or use file URLs:
 - `file:///Users/irisiri/portfolio-web/index.html`
 - `file:///Users/irisiri/portfolio-web/about.html`
+
+Notes:
+- The site prefers [assets/content.json](/Users/irisiri/portfolio-web/assets/content.json)
+- For direct `file://` previews, it can fall back to [assets/content.generated.js](/Users/irisiri/portfolio-web/assets/content.generated.js)
 
 ## Assets
 
