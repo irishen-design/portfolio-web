@@ -1,6 +1,6 @@
 window.__SITE_CONTENT_JSON__ = {
   "meta": {
-    "generatedAt": "2026-06-13T01:20:09.864251+00:00",
+    "generatedAt": "2026-06-13T01:53:35.474820+00:00",
     "sourceWorkbook": "portfolio_content_master.xlsx",
     "languages": [
       "en",
@@ -156,9 +156,9 @@ window.__SITE_CONTENT_JSON__ = {
       },
       "footer": {
         "copyright": {
-          "en": "© {year} Iris Shen",
-          "ja": "© {year} Iris Shen",
-          "zh": "© {year} Iris Shen",
+          "en": "© {year} Iris Shen. All Rights Reserved.",
+          "ja": "© {year} Iris Shen. All Rights Reserved.",
+          "zh": "© {year} Iris Shen. All Rights Reserved.",
           "notes": "Footer"
         }
       },
