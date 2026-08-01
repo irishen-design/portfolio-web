@@ -139,6 +139,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       link.getAttribute("data-preview-text") || "";
     const target = link.getAttribute("data-preview-target") || "";
     const isContact = target === "contact";
+    if (siteOverlay) {
+      siteOverlay.classList.toggle("site-overlay--contact-preview", isContact);
+    }
 
     if (landingPreviewMedia && landingPreviewContact) {
       landingPreviewMedia.hidden = isContact;
@@ -337,6 +340,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (heroImg) {
         if (heroProject.coverImage) heroImg.src = heroProject.coverImage;
         heroImg.alt = hero.imageAlt || heroProject.imageAlt || hero.title;
+        heroImg.loading = "eager";
+        heroImg.decoding = "async";
+        heroImg.setAttribute("fetchpriority", "high");
       }
       const heroKicker = heroArticle.querySelector(".section-kicker");
       const heroTitle = heroArticle.querySelector("#work-hero-title");
@@ -362,6 +368,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (zhangyuanProject.coverImage) img.src = zhangyuanProject.coverImage;
         img.alt =
           zhangyuanFeatureContent.imageAlt || zhangyuanProject.imageAlt || "";
+        img.loading = "lazy";
+        img.decoding = "async";
       }
       const kicker = zhangyuanFeature.querySelector(".section-kicker");
       const title = zhangyuanFeature.querySelector("h2");
@@ -388,6 +396,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (img) {
         if (project.coverImage) img.src = project.coverImage;
         img.alt = project.imageAlt || project.title || "";
+        img.loading = "lazy";
+        img.decoding = "async";
       }
       const heading = article.querySelector("h3");
       renderCardHeading(heading, project);
@@ -441,6 +451,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     function setOverlayState(isOpen) {
       document.body.classList.toggle("overlay-open", isOpen);
       siteOverlay.classList.toggle("is-open", isOpen);
+      if (!isOpen) {
+        siteOverlay.classList.remove("site-overlay--contact-preview");
+      }
       siteOverlay.setAttribute("aria-hidden", isOpen ? "false" : "true");
       menuTrigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
       menuTrigger.classList.toggle("is-open", isOpen);
@@ -467,8 +480,21 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
+    function useInlineContactPreview() {
+      return (
+        window.matchMedia("(max-width: 820px)").matches ||
+        window.matchMedia("(hover: none) and (pointer: coarse)").matches
+      );
+    }
+
     landingLinks.forEach((link) => {
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (event) => {
+        const target = link.getAttribute("data-preview-target");
+        if (target === "contact" && useInlineContactPreview()) {
+          event.preventDefault();
+          applyLandingPreview(link);
+          return;
+        }
         setOverlayState(false);
       });
     });
@@ -791,6 +817,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           wrap.className = `item${isEditorial ? ` item--stack item--${img.variant || "full"}` : ""}`;
           const el = document.createElement("img");
           el.loading = "lazy";
+          el.decoding = "async";
           el.src = img.src;
           el.alt = img.alt || data.title;
           wrap.addEventListener("click", () => {
